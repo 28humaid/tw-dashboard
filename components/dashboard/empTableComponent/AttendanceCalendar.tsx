@@ -126,7 +126,7 @@ export default function AttendanceCalendar({ employee }: AttendanceCalendarProps
     weekoff: "bg-[var(--bg-weekoff)] text-[var(--text-weekoff)]",
   };
 
-  const defaultBg = "bg-gray-50 dark:bg-gray-800/30 text-gray-400 dark:text-gray-500";
+  const defaultBg = "bg-gray-50 text-gray-400";
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4">
@@ -170,7 +170,7 @@ export default function AttendanceCalendar({ employee }: AttendanceCalendarProps
             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day, i) => (
             <div
                 key={day}
-                className="font-medium text-gray-500 dark:text-gray-400 py-2"
+                className="font-medium text-gray-500 py-2"
             >
                 {format(new Date(2025, 0, i + 5), "EEE", { locale })} {/* locale-aware */}
             </div>
@@ -219,7 +219,7 @@ export default function AttendanceCalendar({ employee }: AttendanceCalendarProps
                     flex flex-col justify-between items-center
                     text-center
                     transition-colors ${bgClass}
-                    ${isCurrentDay ? "ring-2 ring-blue-500/70 dark:ring-blue-400/70" : ""}
+                    ${isCurrentDay ? "ring-2 ring-blue-500/70" : ""}
                     hover:shadow-sm
                     group
                     min-w-[70px]       // slightly narrower min-width

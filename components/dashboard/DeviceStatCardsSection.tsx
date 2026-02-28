@@ -79,7 +79,7 @@ export default function DeviceStatCardsSection() {
             id: "serial",
             header: t("deviceSection.Serial Number"),
             cell: (row: any) => (
-              <span className="font-mono text-xs text-gray-600 dark:text-gray-400">
+              <span className="font-mono text-xs text-gray-600">
                 {row.serialNumber}
               </span>
             ),
@@ -95,7 +95,7 @@ export default function DeviceStatCardsSection() {
             id: "lastSeen",
             header: t("deviceSection.Last Seen"),
             cell: (row: any) => row.lastConnected,
-            className: "text-gray-600 dark:text-gray-400",
+            className: "text-gray-600",
           },
         ],
         tableGridTemplate: "grid-cols-[2.4fr_2.6fr_1.6fr_1.5fr_1.3fr]",
@@ -108,7 +108,7 @@ export default function DeviceStatCardsSection() {
   return (
     <div className="space-y-6">
       {/* Header + Date Picker – consistent style with EmpAttendanceSection */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 dark:bg-gray-800">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <h2 className="text-lg text-[var(--text-grey-color)] font-semibold">{t("DeviceStatus")}</h2>
 
         <div>
@@ -118,7 +118,7 @@ export default function DeviceStatCardsSection() {
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
             className="
-              px-3 py-2 rounded-lg text-sm dark:bg-gray-700 dark:text-white
+              px-3 py-2 rounded-lg text-sm
             "
           />
         </div>
@@ -130,7 +130,7 @@ export default function DeviceStatCardsSection() {
           <PieChart data={enrichedDeviceCards} heading={t("deviceActivityDistribution")} />
         </div>
       ) : (
-        <div className="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6 text-center text-gray-700 dark:text-gray-300 min-h-[220px] flex items-center justify-center">
+        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center text-gray-700 min-h-[220px] flex items-center justify-center">
           <div>
             <p className="text-lg font-medium">{t("deviceSection.No device data for")} {selectedDate}</p>
             <p className="mt-2 text-sm">{t("deviceSection.Please select another date")}</p>

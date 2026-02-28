@@ -39,8 +39,8 @@ export default function DeviceCard({ device, index }: Props) {
           className={`
             px-3 py-1 rounded-full text-xs font-medium
             ${isOnline
-              ? "bg-green-500/20 text-green-700 dark:bg-green-600/30 dark:text-green-400"
-              : "bg-red-500/20 text-red-700 dark:bg-red-600/30 dark:text-red-400"
+              ? "bg-green-500/20 text-green-700"
+              : "bg-red-500/20 text-red-700"
             }
           `}
         >

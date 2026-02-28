@@ -44,7 +44,7 @@ export default function ShiftStackedAreaChart() {
   const hasData = chartData.length > 0;
 
   return (
-    <div className="bg-[var(--content-background)] dark:bg-gray-800 p-4 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 max-h-[340px] mt-5">
+    <div className="bg-[var(--content-background)] p-4 rounded-xl shadow-md border border-gray-200 max-h-[340px] mt-5">
       {/* Header + Date Picker – same structure & classes as your example */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <h2 className="text-lg text-[var(--text-grey-color)] font-semibold">
@@ -57,7 +57,7 @@ export default function ShiftStackedAreaChart() {
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
             className="
-              px-3 py-2 rounded-lg text-sm dark:bg-gray-700 dark:text-white
+              px-3 py-2 rounded-lg text-sm
             "
           />
         </div>
@@ -68,7 +68,7 @@ export default function ShiftStackedAreaChart() {
           <StackedAreaChart data={chartData} />
         </div>
       ) : (
-        <div className="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6 text-center text-gray-700 dark:text-gray-300 min-h-[220px] flex items-center justify-center mt-6">
+        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center text-gray-700 min-h-[220px] flex items-center justify-center mt-6">
           <div>
             <p className="text-lg font-medium">No shift coverage data for {selectedDate}</p>
             <p className="mt-2 text-sm">Please select another date.</p>

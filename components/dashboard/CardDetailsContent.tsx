@@ -22,24 +22,24 @@ export default function CardDetailsContent({ card }: CardDetailsContentProps) {
         {/* <h2 className="text-xl font-semibold">{effectiveTitle}</h2> */}
 
         <div className="mt-2 flex items-baseline gap-3">
-          <div className="text-3xl font-bold text-gray-900 dark:text-gray-100">
+          <div className="text-3xl font-bold text-gray-900">
             {card.value}
           </div>
           {card.label && (
-            <span className="text-xl text-gray-600 dark:text-gray-400">
+            <span className="text-xl text-gray-600">
               {card.label}
             </span>
           )}
         </div>
 
         {card.percentage !== undefined && (
-          <div className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+          <div className="mt-1 text-sm text-gray-500">
             {card.percentage}% {t("card details content.of total")}
           </div>
         )}
 
         {card.modalSubtitle && (
-          <div className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+          <div className="mt-3 text-sm text-gray-600">
             {card.modalSubtitle}
           </div>
         )}
@@ -63,14 +63,14 @@ export default function CardDetailsContent({ card }: CardDetailsContentProps) {
             paginated={true}
             pageSize={5}
             searchPlaceholder={t("card details content.Search...")}
-            className="rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden"
+            className="rounded-lg shadow-sm border border-gray-200 overflow-hidden"
           />
         </div>
       )}
 
       {/* Fallback message when nothing is provided */}
       {!card.modalContent && (!card.tableData || card.tableData.length === 0) && (
-        <div className="py-8 text-center text-gray-500 dark:text-gray-400 italic">
+        <div className="py-8 text-center text-gray-500 italic">
           {t("card details content.No details available")}
         </div>
       )}

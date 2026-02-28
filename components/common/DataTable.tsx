@@ -97,7 +97,7 @@ export default function DataTable<T>({
     <div className={`shadow-lg rounded-lg overflow-hidden ${className}`}>
       {/* Search bar */}
       {searchable && (
-        <div className="p-4 dark:bg-gray-800/50">
+        <div className="p-4">
           <input
             type="text"
             value={searchTerm}
@@ -106,7 +106,7 @@ export default function DataTable<T>({
               setCurrentPage(1); // reset to page 1 on new search
             }}
             placeholder={t(searchPlaceholder)}
-            className="w-full max-w-md px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            className="w-full max-w-md px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
       )}
@@ -151,8 +151,8 @@ export default function DataTable<T>({
 
       {/* Pagination */}
       {showPagination && (
-        <div className="flex items-center justify-between px-4 py-3 bg-gray-50 dark:bg-gray-800/50 text-sm">
-          <div className="text-gray-600 dark:text-gray-400">
+        <div className="flex items-center justify-between px-4 py-3 bg-gray-50 text-sm">
+          <div className="text-gray-600 ">
             Showing {(currentPage - 1) * pageSize + 1}–
             {Math.min(currentPage * pageSize, filteredData.length)} of{" "}
             {filteredData.length}
@@ -162,7 +162,7 @@ export default function DataTable<T>({
             <button
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
-              className="px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100"
             >
               ← {t("Prev")}
             </button>
@@ -187,7 +187,7 @@ export default function DataTable<T>({
                   className={`px-3 py-1 rounded border ${
                     currentPage === pageNum
                       ? "bg-blue-600 text-white border-blue-600"
-                      : "hover:bg-gray-100 dark:hover:bg-gray-700"
+                      : "hover:bg-gray-100"
                   }`}
                 >
                   {pageNum}
@@ -198,7 +198,7 @@ export default function DataTable<T>({
             <button
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
-              className="px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100"
             >
               {t("Next")} →
             </button>

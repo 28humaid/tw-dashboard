@@ -71,7 +71,7 @@ export default function Sidebar({ items }: SidebarProps) {
         aria-label="Toggle menu"
       >
         {!isMobileOpen && (
-          <div className="p-2 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100">
+          <div className="p-2 rounded-md bg-gray-200 text-gray-900">
             <Menu size={24} />
           </div>
         )}
@@ -83,12 +83,12 @@ export default function Sidebar({ items }: SidebarProps) {
           lg:sticky lg:top-0 lg:translate-x-0 lg:transition-none
           ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
           ${isLargeScreen ? sidebarWidth : "w-64"}
-          h-screen overflow-y-auto bg-[var(--section-background)] dark:bg-gray-900 
-          border-r border-gray-200 dark:border-gray-800`}
+          h-screen overflow-y-auto bg-[var(--section-background)] 
+          border-r border-gray-200`}
       >
         <div className="flex flex-col h-full">
           {/* Header / Logo + Collapse button */}
-          <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+          <div className="flex items-center justify-between p-4 border-b border-gray-200">
             <div className={`flex items-center gap-3 ${isCollapsed ? "justify-center" : ""}`}>
               {isCollapsed ? null : (
                 <div className="w-40 h-10 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold">
@@ -100,7 +100,7 @@ export default function Sidebar({ items }: SidebarProps) {
             {isLargeScreen && (
               <button
                 onClick={toggleCollapse}
-                className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+                className="p-1 rounded hover:bg-gray-200"
                 aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
               >
                 {isCollapsed ? <ChevronRightIcon size={20} /> : <ChevronLeft size={20} />}
@@ -120,13 +120,13 @@ export default function Sidebar({ items }: SidebarProps) {
                       <details className="group" open={hasActiveChild}>
                         <summary
                           className={`
-                            flex items-center px-3 py-2 text-gray-900 dark:text-gray-100 
+                            flex items-center px-3 py-2 text-gray-900 
                             rounded-md cursor-pointer transition-colors
                             ${isCollapsed ? "justify-center" : "justify-between"}
                             ${
                               hasActiveChild
-                                ? "bg-gray-200/70 dark:bg-gray-700/60 font-medium"
-                                : "hover:bg-gray-100 dark:hover:bg-gray-700"
+                                ? "bg-gray-200/70 font-medium"
+                                : "hover:bg-gray-100"
                             }
                           `}
                         >
@@ -153,7 +153,7 @@ export default function Sidebar({ items }: SidebarProps) {
                                       ${
                                         active
                                           ? "bg-gray-100 font-medium border-s-4 border-[val(--bg-4)] pl-[calc(0.75rem-1px)]"
-                                          : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                          : "text-gray-700 hover:bg-gray-100"
                                       }
                                     `}
                                   >
@@ -174,7 +174,7 @@ export default function Sidebar({ items }: SidebarProps) {
                           ${
                             isActive(item.href)
                               ? "bg-gray-100 font-medium border-s-4 border-[val(--bg-4)] pl-[calc(0.75rem-1px)]"
-                              : "text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
+                              : "text-gray-900 hover:bg-gray-100"
                           }
                         `}
                       >

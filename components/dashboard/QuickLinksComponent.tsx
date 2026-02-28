@@ -15,7 +15,7 @@ export default function QuickLinksComponent() {
   return (
     <>
       <div className="relative space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 dark:bg-gray-800">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <h2 className="text-lg text-[var(--text-grey-color)] font-semibold">
             {t("Quick Links")}
           </h2>

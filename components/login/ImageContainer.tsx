@@ -7,7 +7,7 @@ export default function ImageContainer(){
             <div className="flex flex-col items-center">
                 <div>
                     <Image
-                        className="dark:invert"
+                        className=""
                         src={twLogo}
                         alt="TW logo"
                         width={200}
@@ -16,7 +16,7 @@ export default function ImageContainer(){
                 </div>
                 <div>
                     <Image
-                        className="dark:invert"
+                        className=""
                         src={loginImg}
                         alt="TW logo"
                         width={400}

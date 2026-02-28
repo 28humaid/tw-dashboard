@@ -40,7 +40,7 @@ export default function EmpAttendanceSection() {
         <h2 className="text-lg text-[var(--text-grey-color)] font-semibold">{t("EmpAttendanceSection.EmployeeAttendance")}</h2>
 
         <div className="flex items-center gap-3">
-          {/* <label className="text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
+          {/* <label className="text-sm font-medium text-gray-700 whitespace-nowrap">
             Date:
           </label> */}
           <input
@@ -48,7 +48,7 @@ export default function EmpAttendanceSection() {
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
             className="
-              px-3 py-2 rounded-lg text-sm dark:bg-gray-700 dark:text-white
+              px-3 py-2 rounded-lg text-sm
             "
           />
         </div>
@@ -60,7 +60,7 @@ export default function EmpAttendanceSection() {
             <PieChart data={statCards} heading={t("attendanceDistribution")} />
         </div>
       ) : (
-        <div className="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6 text-center text-gray-700 dark:text-gray-300 min-h-[280px] flex items-center justify-center">
+        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center text-gray-700 min-h-[280px] flex items-center justify-center">
           <div>
             <p className="text-lg font-medium">{t("EmpAttendanceSection.NoAttendanceMsg")} {selectedDate}</p>
             <p className="mt-2 text-sm">{t("EmpAttendanceSection.SelectAnotherDateMsg")}</p>
