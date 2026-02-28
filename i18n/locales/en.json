@@ -1,0 +1,162 @@
+{
+  "EmpAttendanceSection":{
+    "EmployeeAttendance":"Employee Attendance",
+    "NoAttendanceMsg":"No attendance data for",
+    "SelectAnotherDateMsg": "Please select another date."
+  },
+  "attendanceDistribution":"Attendance Distribution",
+  "departmentWiseData":"Department-wise data",
+  "stats": {
+    "Present": "Present",
+    "Absent": "Absent",
+    "Late": "Late",
+    "Leave": "On Leave",
+    "Holiday": "Holiday",
+    "Week Off": "Week Off",
+    "Active Members": "Active Members",
+    "Total Devices":"Total Devices",
+    "Online":"Online",
+    "Offline":"Offline",
+    "Logs":"Logs",
+    "Leave Requests":"Leave Requests",
+    "Pending":"Pending",
+    "Approved":"Approved",
+    "Rejected":"Rejected",
+    "Attendance Requests":"Attendance Requests"
+  },
+  "Total":"Total",
+
+  "sidebar": {
+    "dashboard":{
+      "title":"Dashboard"
+    },
+    "employeeSelfService": {
+      "title": "Employee Self Service",
+      "attendance": "Attendance"
+    },
+    "masters": {
+      "title": "Masters",
+      "company": "Company",
+      "location": "Location"
+    }
+  },
+  
+  "Attendance Trend":"Attendance Trend",
+  "pastDays": "Past {{count}} days",
+  "days": "Days",
+  "Present": "Present",
+  "Absent": "Absent",
+  "Late": "Late",
+  "Leave": "Leave",
+  "Holiday": "Holiday",
+  "Week Off": "Week Off",
+  "HR":"HR",
+  "Sales":"sales",
+  "IT":"IT",
+  "Marketing":"Marketing",
+  "Start": "Start",
+  "End": "End",
+  "Hours": "Hours",
+  "hrs":"hrs",
+  "ShiftCoverageByHour": "Shift Coverage by Hour",
+
+  "AttendanceOverview": "Attendance Overview",
+
+  "PresenceTrend": "Presence Trend",
+  "Employee": "Employee",
+  "ID": "ID",
+  "Department": "Department",
+  "Login": "Login",
+  "Logout": "Logout",
+  "Profile": "Profile",
+  "searchByNameOrId": "Search by name or ID",
+  "AllDepartments": "All Departments",
+  "DeviceActivity": "Device Activity",
+  "NoActiveDevicesFound": "No active devices found",
+  "Serial": "Serial",
+  "IP": "IP",
+  "LastSeen": "Last seen",
+
+  "DeviceStatus": "Device Status",
+
+  "login": {
+    "app.name": "Integrated Attendance System",
+    "companyCode": {
+      "label": "Company Code",
+      "placeholder": "Enter company code"
+    },
+    "username": {
+      "label": "Username",
+      "placeholder": "Enter username"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter password"
+    },
+    "button": "Login",
+    "errors": {
+      "companyCodeRequired": "Company code is required",
+      "usernameRequired": "Username is required",
+      "passwordRequired": "Password is required"
+    }
+  },
+  "deviceActivityDistribution":"Device Activity Distribution",
+
+  "deviceSection":{
+    "Devices":"Devices",
+    "Status":"Status",
+    "Device Name":"Device Name",
+    "Serial Number":"Serial Number",
+    "IP Address":"IP Address",
+    "Last Seen":"Last Seen",
+    "No device data for":"No device data for",
+    "Please select another date":"Please select another date"
+  },
+
+  "leaveSection":{
+    "Leave Requests":"Leave Requests",
+    "Status":"Status",
+    "Employee Name":"Employee Name",
+    "Employee ID":"Employee ID",
+    "Leave Type":"Leave Type",
+    "Period":"Period",
+    "Applied On":"Applied On",
+    "No leave data for":"No leave data for",
+    "Please select another date":"Please select another date"
+  },
+  "card details content":{
+    "of total":"of total",
+    "No records found":"No records found",
+    "Search...":"Search...",
+    "No details available":"No details available"
+  },
+
+  "Quick Links":"Quick Links",
+  "View more":"View more",
+  "quickLinks": {
+    "reports":   { 
+      "title": "Reports",   
+      "description": "View and export system reports" 
+    },
+    "devices":   { 
+      "title": "Devices",   
+      "description": "Manage connected devices" 
+    },
+    "alerts":    { 
+      "title": "Alerts",    
+      "description": "Check active alerts and warnings" 
+    },
+    "documents": { 
+      "title": "Documents", 
+      "description": "Access uploaded documents" 
+    },
+    "settings":  { 
+      "title": "Settings",  
+      "description": "Configure system preferences" 
+    },
+    "users":     { 
+      "title": "Users",     
+      "description": "Manage user accounts and roles" 
+    }
+  }
+}

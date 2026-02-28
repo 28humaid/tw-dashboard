@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  --bg-0:     #ffffff;       /* replaces: bg-white          */
+  --bg-1:     #f3f4f6;       /* replaces: bg-gray-100       */
+  --bg-2:     #e5e7eb;       /* replaces: bg-gray-200       */
+  --bg-4:   #7c828b;       /* replaces: text-gray-700     */
+
+  --section-background: #e9ecef;
+
+  --content-background: #fff;
+
+  --text-grey-color: #6b7280;
+
+  /* --color-active-members: #3B82F6;
+  --color-present: #22C55E;
+  --color-absent: #EF4444;
+  --color-late: #F97316;
+  --color-leave: #EAB308;
+  --color-holiday: #8B5CF6;
+  --color-weekoff: #EC4899; 
+  --color-total-devices: #3B82F6; 
+  --color-device-online:#10B981; 
+  --color-device-offline:#F43F5E; */
+
+  /* Core */
+  --color-active-members: #5C86B3;
+  --color-total-devices:  #5C86B3;
+
+  /* Attendance */
+  --color-present:  #4FAF88;   /* soft green */
+  --color-absent:   #D46A6A;   /* softened red */
+  --color-late:     #E29A5F;   /* calm orange */
+  --color-leave:    #D4B357;   /* soft amber */
+  --color-holiday:  #8A79D6;   /* smooth purple */
+  --color-weekoff:  #D27FAE;   /* gentle rose */
+
+  /* Devices */
+  --color-device-online:  #4FAF9A;
+  --color-device-offline: #D86C86;
+  --color-device-logs:  #8A79D6;
+
+  --bg-present: color-mix(in srgb, var(--color-present) 15%, white);
+  --bg-absent: color-mix(in srgb, var(--color-absent) 15%, white);
+  --bg-late: color-mix(in srgb, var(--color-late) 15%, white);
+  --bg-leave: color-mix(in srgb, var(--color-leave) 15%, white);
+  --bg-holiday: color-mix(in srgb, var(--color-holiday) 15%, white);
+  --bg-weekoff: color-mix(in srgb, var(--color-weekoff) 15%, white);
+  --text-present: color-mix(in srgb, var(--color-present) 70%, black);
+  --text-absent: color-mix(in srgb, var(--color-absent) 70%, black);
+  --text-late: color-mix(in srgb, var(--color-late) 70%, black);
+  --text-leave: color-mix(in srgb, var(--color-leave) 70%, black);
+  --text-holiday: color-mix(in srgb, var(--color-holiday) 70%, black);
+  --text-weekoff: color-mix(in srgb, var(--color-weekoff) 70%, black);
+
+  --text-0:   #ffffff;       /* replaces: text-white        */
+  --text-7:   #374151;       /* replaces: text-gray-700     */
+  --text-9:   #111827;       /* replaces: text-gray-900     */
+
+  
+  --accent-6: #2563eb;       /* replaces: bg-blue-600       */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Poppins";
+}
+
+/* Accordion chevron rotation */
+details[open] > summary .chevron {
+  transform: rotate(180deg);
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+/* Flip chevron in RTL */
+[dir="rtl"] .flip-in-rtl {
+  transform: scaleX(-1);
+}
+
+/* Smooth hover transitions */
+a, summary, button {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+@keyframes vertical-carousel {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-vertical-carousel {
+  animation: vertical-carousel 10s linear infinite; /* 30s = speed, make smaller = faster */
+}
+
+.animate-vertical-carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
+}

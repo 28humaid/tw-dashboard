@@ -1,0 +1,156 @@
+
+{
+  "EmpAttendanceSection":{
+    "EmployeeAttendance":"حضور الموظفين",
+    "NoAttendanceMsg":"لا توجد بيانات حضور لـ",
+    "SelectAnotherDateMsg": "يرجى اختيار تاريخ آخر"
+  },
+  "attendanceDistribution": "توزيع الحضور",
+  "stats": {
+    "Present": "حاضر",
+    "Absent": "غائب",
+    "Late": "متأخر",
+    "Leave": "في إجازة",
+    "Holiday": "عطلة",
+    "Week Off": "عطلة أسبوعية",
+    "Active Members": "الأعضاء النشطون",
+    "Total Devices":"إجمالي الأجهزة",
+    "Online":"متصل",
+    "Offline":"غير متصل",
+    "Logs":"سجلآت",
+    "Leave Requests": "طلبات الإجازة",
+    "Pending": "قيد الانتظار",
+    "Approved": "موافق عليه",
+    "Rejected": "مرفوض",
+    "Attendance Requests":"طلبات الحضور"
+  },
+  "Total":"الإجمالي",
+
+  "sidebar": {
+    "dashboard": {
+      "title": "لوحة التحكم"
+    },
+    "employeeSelfService": {
+      "title": "الخدمة الذاتية للموظف",
+      "attendance": "الحضور"
+    },
+    "masters": {
+      "title": "إدارة النظام",
+      "company": "الشركة",
+      "location": "الموقع"
+    }
+  },
+  "Attendance Trend":"اتجاه الحضور",
+  "pastDays": "آخر {{count}} اىام",
+  "days": "ايام",
+  "Present": "حاضر",
+  "Absent": "غائب",
+  "Late": "متأخر",
+  "Leave": "إجازة",
+  "Holiday": "عطلة",
+  "Week Off": "عطلة أسبوعية",
+  "HR":"الموارد البشرية",
+  "Sales":"المبيعات",
+  "IT":"تقنية المعلومات",
+  "Marketing":"التسويق",
+  "Start": "البداية",
+  "End": "النهاية",
+  "Hours": "الساعات",
+  "hrs":"س",
+  "ShiftCoverageByHour": "تغطية الوردية حسب الساعة",
+  "AttendanceOverview": "نظرة عامة على الحضور",
+  "PresenceTrend": "اتجاه التواجد",
+  "Employee": "الموظف",
+  "ID": "المعرّف",
+  "Department": "القسم",
+  "Login": "تسجيل الدخول",
+  "Logout": "تسجيل الخروج",
+  "Profile": "الملف الشخصي",
+  "searchByNameOrId": "البحث بالاسم أو المعرّف",
+  "AllDepartments": "جميع الأقسام",
+  "DeviceActivity": "نشاط الأجهزة",
+  "NoActiveDevicesFound": "لم يتم العثور على أجهزة نشطة",
+  "Serial": "الرقم التسلسلي",
+  "IP": "عنوان IP",
+  "LastSeen": "آخر ظهور",
+
+  "DeviceStatus": "حالة الجهاز",
+  
+  "login": {
+    "app.name": "نظام الحضور المتكامل",
+    "companyCode": {
+      "label": "رمز الشركة",
+      "placeholder": "أدخل رمز الشركة"
+    },
+    "username": {
+      "label": "اسم المستخدم",
+      "placeholder": "أدخل اسم المستخدم"
+    },
+    "password": {
+      "label": "كلمة المرور",
+      "placeholder": "أدخل كلمة المرور"
+    },
+    "button": "تسجيل الدخول",
+    "errors": {
+      "companyCodeRequired": "رمز الشركة مطلوب",
+      "usernameRequired": "اسم المستخدم مطلوب",
+      "passwordRequired": "كلمة المرور مطلوبة"
+    }
+  },
+  "deviceActivityDistribution":"توزيع نشاط الأجهزة",
+  "deviceSection": {
+    "Devices": "الأجهزة",
+    "Status": "حالة",
+    "Device Name": "اسم الجهاز",
+    "Serial Number": "الرقم التسلسلي",
+    "IP Address": "عنوان IP",
+    "Last Seen": "آخر ظهور",
+    "No device data for":"لا توجد بيانات للجهاز",
+    "Please select another date":"يرجى اختيار تاريخ آخر"
+  },
+  "leaveSection": {
+    "Leave Requests": "طلبات الإجازة",
+    "Status": "الحالة",
+    "Employee Name": "اسم الموظف",
+    "Employee ID": "رمز الموظف",
+    "Leave Type": "نوع الإجازة",
+    "Period": "الفترة",
+    "Applied On": "تاريخ التقديم",
+    "No leave data for":"لا توجد بيانات إجازات لـ",
+    "Please select another date":"يرجى اختيار تاريخ آخر"
+  },
+    "card details content":{
+    "of total":"من الإجمالي",
+    "No records found":"لم يتم العثور على سجلات",
+    "Search...":"بحث...",
+    "No details available":"لا توجد تفاصيل متاحة"
+  },
+  "Quick Links": "روابط سريعة",
+  "View more": "عرض المزيد",
+  "quickLinks": {
+    "reports":   { 
+      "title": "التقارير",    
+      "description": "عرض تقارير النظام وتصديرها" 
+    },
+    "devices":   { 
+      "title": "الأجهزة",     
+      "description": "إدارة الأجهزة المتصلة" 
+    },
+    "alerts":    { 
+      "title": "التنبيهات",   
+      "description": "التحقق من التنبيهات والتحذيرات النشطة" 
+    },
+    "documents": { 
+      "title": "المستندات",   
+      "description": "الوصول إلى المستندات المرفوعة" 
+    },
+    "settings":  { 
+      "title": "الإعدادات",   
+      "description": "تهيئة تفضيلات النظام" 
+    },
+    "users":     { 
+      "title": "المستخدمون", 
+      "description": "إدارة حسابات المستخدمين والأدوار" 
+    }
+  }
+}
