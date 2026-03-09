@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
+
 interface Props {
   currentPage: number;
   totalPages: number;
@@ -9,6 +13,7 @@ export default function Pagination({
   totalPages,
   setCurrentPage,
 }: Props) {
+  const {t} = useTranslation();
   if (totalPages <= 1) return null;
 
   const generatePages = () => {
@@ -48,7 +53,7 @@ export default function Pagination({
         onClick={() => setCurrentPage(currentPage - 1)}
         className="px-3 py-1 border rounded disabled:opacity-40"
       >
-        Prev
+        {t("pagination.Previous")}
       </button>
 
       {pages.map((page, index) =>
@@ -77,7 +82,7 @@ export default function Pagination({
         onClick={() => setCurrentPage(currentPage + 1)}
         className="px-3 py-1 border rounded disabled:opacity-40"
       >
-        Next
+        {t("pagination.Next")}
       </button>
     </div>
   );

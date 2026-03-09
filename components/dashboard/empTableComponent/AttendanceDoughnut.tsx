@@ -2,6 +2,7 @@
 
 import { AttendanceStatus, Employee } from "@/types/type";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   PieChart,
   Pie,
@@ -29,7 +30,7 @@ const COLORS: Record<AttendanceStatus, string> = {
 
 export default function AttendanceDoughnut({ employee }: Props) {
   const [selectedDays, setSelectedDays] = useState<number>(7);
-
+  const {t} = useTranslation()
   // SAME threshold logic as your trend chart
   const thresholdDate = new Date();
   thresholdDate.setDate(thresholdDate.getDate() - selectedDays);
@@ -85,7 +86,7 @@ export default function AttendanceDoughnut({ employee }: Props) {
       {/* Header + Range Selector */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <h2 className="text-lg text-[var(--text-grey-color)] font-semibold">
-          Attendance Overview
+          {t("employee details content.Attendance Overview")}
         </h2>
 
         <select
@@ -95,7 +96,7 @@ export default function AttendanceDoughnut({ employee }: Props) {
         >
           {periods.map((days) => (
             <option key={days} value={days}>
-              {`Past ${days} days`}
+              {t("pastDays", { count:days })}
             </option>
           ))}
         </select>
@@ -130,7 +131,7 @@ export default function AttendanceDoughnut({ employee }: Props) {
                 style={{ backgroundColor: item.color }}
                 />
                 <span>
-                {item.name}: <strong>{item.value}</strong>
+                {t(item.name)}: <strong>{item.value}</strong>
                 </span>
             </div>
             ))}

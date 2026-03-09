@@ -133,7 +133,7 @@ export default function AttendanceCalendar({ employee }: AttendanceCalendarProps
       {/* Header with pickers */}
       <div className="flex flex-col lg:flex-row justify-between items-center mb-6 gap-4">
         <h2 className="text-lg font-semibold mb-3 text-[var(--text-grey-color)]">
-          Attendance Calendar
+          {t("employee details content.Attendance Calender")}
         </h2>
 
         <div className="flex gap-4">
@@ -253,11 +253,11 @@ export default function AttendanceCalendar({ employee }: AttendanceCalendarProps
                   {(status === "present" || status === "late") && record && (
                     <div className="w-full text-[10px] leading-tight opacity-80 mt-0.5">
                       <div className="flex justify-between">
-                        <span className="font-medium">In:</span>
+                        <span className="font-medium">{t("employee details content.In")}</span>
                         <span>{shortLogin}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="font-medium">Out:</span>
+                        <span className="font-medium">{t("employee details content.Out")}</span>
                         <span>{shortLogout}</span>
                       </div>
                     </div>

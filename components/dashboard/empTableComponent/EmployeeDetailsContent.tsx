@@ -4,6 +4,7 @@ import Image from "next/image";
 import AttendanceDoughnut from "./AttendanceDoughnut";
 import {X, UserCircle, Fingerprint, CreditCard, KeyRound} from "lucide-react";
 import AttendanceCalendar from "./AttendanceCalendar";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   employee: Employee;
@@ -19,6 +20,7 @@ export default function EmployeeDetailsContent({
     (a) => a.date === selectedDate
   );
 
+  const {t} = useTranslation()
   return (
         <div className="flex flex-wrap gap-4">
             <div className=" flex flex-col flex-1 min-w-[256px] gap-4">
@@ -40,28 +42,28 @@ export default function EmployeeDetailsContent({
                             {employee.faceCount > 0 && (
                             <div className="flex items-center gap-1.5">
                                 <UserCircle className="h-4 w-4" />
-                                <span>{employee.faceCount} Face</span>
+                                <span>{employee.faceCount} {t("employee details content.Face")}</span>
                             </div>
                             )}
 
                             {employee.fingerCount > 0 && (
                             <div className="flex items-center gap-1.5">
                                 <Fingerprint className="h-4 w-4" />
-                                <span>{employee.fingerCount} Finger</span>
+                                <span>{employee.fingerCount} {t("employee details content.Finger")}</span>
                             </div>
                             )}
 
                             {employee.cardCount > 0 && (
                             <div className="flex items-center gap-1.5">
                                 <CreditCard className="h-4 w-4" />
-                                <span>{employee.cardCount} Card</span>
+                                <span>{employee.cardCount} {t("employee details content.Card")}</span>
                             </div>
                             )}
 
                             {employee.pinCount > 0 && (
                             <div className="flex items-center gap-1.5">
                                 <KeyRound className="h-4 w-4" />
-                                <span>{employee.pinCount} PIN</span>
+                                <span>{employee.pinCount} {t("employee details content.PIN")}</span>
                             </div>
                             )}
                             {employee.faceCount === 0 &&
@@ -69,7 +71,7 @@ export default function EmployeeDetailsContent({
                             employee.cardCount === 0 &&
                             employee.pinCount === 0 && (
                                 <div className="text-xs text-gray-500 italic">
-                                No authentication methods enrolled
+                                {t("employee details content.No Auth Method")}
                                 </div>
                             )}
                         </div>

@@ -159,5 +159,20 @@
       "title": "المستخدمون", 
       "description": "إدارة حسابات المستخدمين والأدوار" 
     }
-  }
+  },
+  "employee details content": {
+      "Face": "الوجه",
+      "Finger": "البصمة",
+      "Card": "البطاقة",
+      "PIN":"الرقم السري",
+      "No Auth Method":"لا توجد طرق مصادقة مسجلة",
+      "Attendance Calender":"تقويم الحضور",
+      "In": "دخول",
+      "Out": "خروج",
+      "Attendance Overview": "نظرة عامة على الحضور"
+    },
+    "pagination":{
+      "Previous": "السابق",
+      "Next": "التالي"
+    }
 }

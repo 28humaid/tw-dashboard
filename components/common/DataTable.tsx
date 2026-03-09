@@ -165,7 +165,7 @@ export default function DataTable<T>({
               disabled={currentPage === 1}
               className="px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 flex items-center"
             >
-              <ChevronLeft size={14}/> {t("Prev")}
+              <ChevronLeft size={14} className="flip-in-rtl"/> {t("pagination.Previous")}
             </button>
 
             {Array.from({ length: Math.min(7, totalPages) }, (_, i) => {
@@ -201,7 +201,7 @@ export default function DataTable<T>({
               disabled={currentPage === totalPages}
               className="px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 flex items-center"
             >
-              {t("Next")}<ChevronRight size={14}/>
+              {t("pagination.Next")}<ChevronRight size={14}  className="flip-in-rtl"/>
             </button>
           </div>
         </div>

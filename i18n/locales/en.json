@@ -166,5 +166,19 @@
       "title": "Users",     
       "description": "Manage user accounts and roles" 
     }
+  },
+  "employee details content":{
+      "Face":"Face",
+      "Finger":"Finger",
+      "Card":"Card",
+      "PIN":"PIN",
+      "No Auth Method":"No authentication methods enrolled",
+      "Attendance Calender":"Attendance Calender",
+      "In": "In",
+      "Out": "Out"
+  },
+  "pagination":{
+    "Previous": "Previous",
+    "Next": "Next"
   }
 }
