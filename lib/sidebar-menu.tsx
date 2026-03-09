@@ -37,6 +37,10 @@ export const menuItems: MenuItem[] = [
         label: "sidebar.masters.location",
         href: "/home/masters/location",
       },
+      {
+        label: "sidebar.masters.employee",
+        href: "/home/masters/employee",
+      },
     ],
   },
 ];

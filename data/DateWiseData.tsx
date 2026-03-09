@@ -835,5 +835,14 @@ export const dateWiseData = {
       { hour: 22, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 23 }] },
       { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 22 }] }
     ] as HourlyShiftCoverage[],
+    devices: [
+      {serialNumber: "DEV-00124", name: "Main Gateway - Lobby", connected: true, ipAddress: "192.168.1.104", lastConnected: "Just now"},
+      {serialNumber: "DEV-00891", name: "Camera - Entrance", connected: false, ipAddress: "192.168.1.45", lastConnected: "3 hours ago"},
+      {serialNumber: "DEV-00337", name: "Sensor - Server Room", connected: true, ipAddress: "10.0.0.78", lastConnected: "2 minutes ago"},
+      {serialNumber: "DEV-00912", name: "Access Point - Floor 2", connected: true, ipAddress: "192.168.2.15", lastConnected: "15 minutes ago"},
+      {serialNumber: "DEV-00456", name: "Thermostat - Conference", connected: false, ipAddress: "192.168.1.89", lastConnected: "Yesterday 23:41"},
+      {serialNumber: "DEV-00723", name: "Doorbell - Back Gate", connected: true, ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"},
+      {serialNumber: "DEV-00773", name: "Access Point - Floor 4", connected: true, ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"}
+  ] as Device[],
   },
 } as const;

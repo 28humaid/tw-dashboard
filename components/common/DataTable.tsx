@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { ReactNode, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -162,9 +163,9 @@ export default function DataTable<T>({
             <button
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
-              className="px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100"
+              className="px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 flex items-center"
             >
-              ← {t("Prev")}
+              <ChevronLeft size={14}/> {t("Prev")}
             </button>
 
             {Array.from({ length: Math.min(7, totalPages) }, (_, i) => {
@@ -186,7 +187,7 @@ export default function DataTable<T>({
                   onClick={() => setCurrentPage(pageNum)}
                   className={`px-3 py-1 rounded border ${
                     currentPage === pageNum
-                      ? "bg-blue-600 text-white border-blue-600"
+                      ? "bg-black text-white border-black"
                       : "hover:bg-gray-100"
                   }`}
                 >
@@ -198,9 +199,9 @@ export default function DataTable<T>({
             <button
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
-              className="px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100"
+              className="px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 flex items-center"
             >
-              {t("Next")} →
+              {t("Next")}<ChevronRight size={14}/>
             </button>
           </div>
         </div>

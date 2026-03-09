@@ -12,6 +12,7 @@ import {
   ChevronLeft,
   ChevronRight as ChevronRightIcon,
 } from "lucide-react";
+import Image from "next/image";
 
 interface MenuItem {
   label: string; // i18n key
@@ -91,8 +92,13 @@ export default function Sidebar({ items }: SidebarProps) {
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
             <div className={`flex items-center gap-3 ${isCollapsed ? "justify-center" : ""}`}>
               {isCollapsed ? null : (
-                <div className="w-40 h-10 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold">
-                  App logo
+                <div className="w-40 h-10">
+                  <Image
+                    src="/images/TimeWatchLogo.png"
+                    alt="Logo"
+                    width={200}
+                    height={40}
+                  />
                 </div>
               )}
             </div>
@@ -183,7 +189,7 @@ export default function Sidebar({ items }: SidebarProps) {
                           <p className="text-[14px]">{t(item.label)}</p>
                         </span>
                         {!isCollapsed && item.href && (
-                          <ChevronRight className="w-4 h-4 ml-auto flip-in-rtl" />
+                          <ChevronRight className="w-4 h-4 ms-auto flip-in-rtl" />
                         )}
                       </Link>
                     )}

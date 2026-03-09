@@ -13,13 +13,13 @@ export default function CardDetailsContent({ card }: CardDetailsContentProps) {
   const gridTemplate = card.tableGridTemplate || "grid-cols-[minmax(0,2fr)_minmax(0,2.5fr)_minmax(0,1.4fr)_minmax(0,1.4fr)_minmax(0,1fr)]";
   const minWidth = card.tableMinWidth || "min-w-[720px]";
 
-  // const effectiveTitle = card.modalTitle || card.title || "Details";
+  const effectiveTitle = card.modalTitle || card.title || "Details";
 
   return (
     <div className="space-y-6 pb-4">
       {/* Header section */}
       <div>
-        {/* <h2 className="text-xl font-semibold">{effectiveTitle}</h2> */}
+        <h2 className="text-xl font-semibold">{effectiveTitle}</h2>
 
         <div className="mt-2 flex items-baseline gap-3">
           <div className="text-3xl font-bold text-gray-900">

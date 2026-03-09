@@ -37,7 +37,9 @@
     "masters": {
       "title": "Masters",
       "company": "Company",
-      "location": "Location"
+      "location": "Location",
+      "employee":"Employee"
+
     }
   },
   
@@ -110,7 +112,10 @@
     "IP Address":"IP Address",
     "Last Seen":"Last Seen",
     "No device data for":"No device data for",
-    "Please select another date":"Please select another date"
+    "Please select another date":"Please select another date",
+    "Total Devices": "Total",
+    "Online": "Online",
+    "Offline": "Offline"
   },
 
   "leaveSection":{
@@ -122,7 +127,10 @@
     "Period":"Period",
     "Applied On":"Applied On",
     "No leave data for":"No leave data for",
-    "Please select another date":"Please select another date"
+    "Please select another date":"Please select another date",
+    "Pending": "Pending Leave Requests",
+    "Approved": "Approved Leave Requests",
+    "Rejected": "Rejected Leave Requests"
   },
   "card details content":{
     "of total":"of total",

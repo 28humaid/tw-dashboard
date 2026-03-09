@@ -35,10 +35,7 @@ export default function AttendanceApprovalSection() {
 
       return {
         ...card,
-        modalTitle:
-          card.title === "Attendance Requests"
-            ? t("All Leave Requests")
-            : `${card.title} ${t("leaveSection.Leave Requests")}`,
+        modalTitle: t(`leaveSection.${card.title}`),
         tableData: tableRows,
         tableColumns: [
           {

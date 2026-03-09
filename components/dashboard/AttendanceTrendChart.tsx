@@ -88,7 +88,6 @@ export default function AttendanceTrendChart<
               );
             }}
           />
-
           {/* {lines.filter((line) =>
     visibleLines.includes(String(line.dataKey))
   ).map((line) => (
@@ -116,6 +115,8 @@ export default function AttendanceTrendChart<
                 hide={!isVisible}           // ← this is the key
                 dot={isVisible}             // optional: hide dots too
                 activeDot={isVisible ? { r: 6 } : false}
+                // isAnimationActive={true}
+                // animationDuration={500}
               />
             );
           })}

@@ -50,7 +50,7 @@ export default function DeviceStatCardsSection() {
         relatedDevices: devices,           // optional — keep for compatibility
 
         // ── New modal control fields ──
-        modalTitle: `${card.title} ${t("deviceSection.Devices")}`,
+        modalTitle: `${t(`deviceSection.${card.title}`)} ${t("deviceSection.Devices")}`,
         // modalSubtitle: `${filteredDevices.length} device${filteredDevices.length !== 1 ? 's' : ''} found`,
 
         tableData: tableRows,
