@@ -36,7 +36,7 @@ export default function DateBasedStatSection<T>({
           {title}
         </h2>
 
-        <div className="flex-1 min-w-[160px] flex items-center justify-end">
+        <div className="flex-1 min-w-[150px] lg:min-w-[120px] flex items-center justify-end">
           <input
             type="date"
             value={selectedDate}
