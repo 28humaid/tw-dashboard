@@ -95,7 +95,7 @@
     "errors": {
       "companyCodeRequired": "رمز الشركة مطلوب",
       "usernameRequired": "اسم المستخدم مطلوب",
-      "passwordRequired": "كلمة المرور مطلوبة"
+      "passwordRequired": "كلمة المرور مطلوب"
     }
   },
   "deviceActivityDistribution":"توزيع نشاط الأجهزة",

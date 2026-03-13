@@ -154,3 +154,8 @@ export interface LeaveInfo {
   status: "Pending" | "Approved" | "Rejected";
 }
 
+export type LoginFormData = {
+  companyCode:string;
+  username:string;
+  password:string;
+}

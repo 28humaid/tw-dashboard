@@ -6,68 +6,49 @@ import { Eye, EyeOff } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useToast } from "../common/ToastProvider";
 import { useRouter } from "next/navigation";
+import {useForm} from "react-hook-form";
+import { LoginFormData } from "@/types/type";
 
 export default function LoginForm() {
   const { t } = useTranslation();
   const { error: showError } = useToast();
   const router = useRouter()
 
-  const [formData, setFormData] = useState({
-    companyCode: "",
-    username: "",
-    password: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   companyCode: "",
+  //   username: "",
+  //   password: "",
+  // });
+
+  const {register, handleSubmit, formState:{errors}} = useForm<LoginFormData>()
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+  const onSubmit = (data:LoginFormData) =>{
+    console.log("Login data:", data);
+    router.push("/home")
+  }
 
-  const handleSubmit = (e: React.SubmitEvent) => {
-    e.preventDefault();
-    if (!formData.companyCode.trim()) {
-      showError(t("login.errors.companyCodeRequired") || "Company code is required");
-      return;
-    }
-
-    if (!formData.username.trim()) {
-      showError(t("login.errors.usernameRequired") || "Username is required");
-      return;
-    }
-
-    if (!formData.password.trim()) {
-      showError(t("login.errors.passwordRequired") || "Password is required");
-      return;
-    }
-
-    if (formData.companyCode.trim() && formData.username.trim() && formData.password.trim()){
-        console.log("Login data:", formData);
-        router.push('/home')
-        // yha pr.....
-    }
-  };
+  const onError = () =>{
+    if (errors.companyCode) showError(errors.companyCode.message!);
+    else if (errors.username) showError(errors.username.message!);
+    else if (errors.password) showError(errors.password.message!)
+  }
 
   return (
-    <form onSubmit={handleSubmit}  noValidate className="flex flex-col gap-6">
+    <form onSubmit={handleSubmit(onSubmit,onError)}  noValidate className="flex flex-col gap-6">
       <Input
         label={t("login.companyCode.label")}
-        name="companyCode"
-        value={formData.companyCode}
-        onChange={handleChange}
+        error={errors.companyCode?.message}
+        {...register("companyCode",{required:t("login.errors.companyCodeRequired") || "Company code is required"})}
         placeholder={t("login.companyCode.placeholder")}
         required
       />
 
       <Input
         label={t("login.username.label")}
-        name="username"
-        value={formData.username}
-        onChange={handleChange}
+        error={errors.username?.message}
+        {...register("username",{required:t("login.errors.usernameRequired") || "Username is required"})}
         placeholder={t("login.username.placeholder")}
         required
       />
@@ -75,10 +56,9 @@ export default function LoginForm() {
       <div className="relative">
         <Input
           label={t("login.password.label")}
-          name="password"
           type={showPassword ? "text" : "password"}
-          value={formData.password}
-          onChange={handleChange}
+          error={errors.password?.message}
+          {...register("password",{required:t("login.errors.passwordRequired") || "Password is required"})}
           placeholder={t("login.password.placeholder")}
           required
           className="pr-10"
