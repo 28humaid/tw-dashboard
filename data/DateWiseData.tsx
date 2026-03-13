@@ -439,7 +439,7 @@ export const dateWiseData = {
       {serialNumber: "DEV-00773", name: "Access Point - Floor 4", connected: true, ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"}
     ] as Device[],
   },
-  "2026-03-03": {
+  "2026-03-07": {
     statCards: [
       { title: "Active Members", value: 234, color: "var(--color-active-members)" },
 
@@ -490,7 +490,7 @@ export const dateWiseData = {
       { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 0 },  { shiftCode: "NIG", employees: 18 }] }
     ] as HourlyShiftCoverage[],
   },
-  "2026-03-04": {
+  "2026-03-08": {
     statCards: [
       { title: "Active Members", value: 234, color: "var(--color-active-members)" },
 
@@ -541,7 +541,7 @@ export const dateWiseData = {
       { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 23 }] }
     ] as HourlyShiftCoverage[],
   },
-  "2026-03-05": {
+  "2026-03-09": {
     statCards: [
       { title: "Active Members", value: 234, color: "var(--color-active-members)" },
 
@@ -595,7 +595,7 @@ export const dateWiseData = {
       { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 22 }] }
     ] as HourlyShiftCoverage[],
   },
-  "2026-03-06": {
+  "2026-03-10": {
     statCards: [
       { title: "Active Members", value: 234, color: "var(--color-active-members)" },
 
@@ -648,7 +648,7 @@ export const dateWiseData = {
       { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0  },{ shiftCode: "GEN", employees: 4  },{ shiftCode: "NIG", employees: 21 }] }
     ] as HourlyShiftCoverage[],
   },
-  "2026-03-07": {
+  "2026-03-11": {
     statCards: [
       { title: "Active Members", value: 234, color: "var(--color-active-members)" },
 
@@ -699,7 +699,7 @@ export const dateWiseData = {
       { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 23 }] }
     ] as HourlyShiftCoverage[],
   },
-  "2026-03-08": {
+  "2026-03-12": {
     statCards: [
       { title: "Active Members", value: 234, color: "var(--color-active-members)" },
 
@@ -767,7 +767,7 @@ export const dateWiseData = {
       { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 22 }] }
     ] as HourlyShiftCoverage[],
   },
-  "2026-03-09": {
+  "2026-03-13": {
     statCards: [
       { title: "Active Members", value: 234, color: "var(--color-active-members)" },
 
