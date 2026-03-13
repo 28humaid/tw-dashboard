@@ -8,6 +8,8 @@ import { StatCardProps } from "@/types/type";
 import { dateWiseData } from "@/data/DateWiseData";
 import { useTranslation } from "react-i18next";
 import dynamic from "next/dynamic";
+import StatCardSkeleton from "../common/StatCardSkeleton";
+import PieChartSkeleton from "../common/PieChartSkeleton";
 
 const PieChart = dynamic(() => import("./PieChart"), {
   ssr: false,
@@ -17,6 +19,20 @@ const fallbackData: { statCards: StatCardProps[]; deviceCards: StatCardProps[] }
   statCards: [],
   deviceCards: [],
 };
+
+function DeviceStatCardsSkeleton() {
+  return (
+    <div className="flex flex-col md:flex-row gap-4">
+      {/* Stat cards: show 3 placeholders */}
+      <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[1, 2, 3].map((i) => (
+          <StatCardSkeleton key={i} />
+        ))}
+      </div>
+      <PieChartSkeleton />
+    </div>
+  );
+}
 
 export default function EmpAttendanceSection() {
   const {t} = useTranslation();

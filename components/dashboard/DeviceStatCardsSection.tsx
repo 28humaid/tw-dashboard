@@ -8,36 +8,66 @@ import { Device, StatCardProps } from "@/types/type";
 import { dateWiseData } from "@/data/DateWiseData";
 import { useTranslation } from "react-i18next";
 import dynamic from "next/dynamic";
+import StatCardSkeleton from "../common/StatCardSkeleton";
+import PieChartSkeleton from "../common/PieChartSkeleton";
+
 const PieChart = dynamic(() => import("./PieChart"), {
   ssr: false,
+  loading: () => <PieChartSkeleton />,
 });
 
 const fallbackData: StatCardProps[] = [];
 
+
+function DeviceStatCardsSkeleton() {
+  return (
+    <div className="flex flex-col md:flex-row gap-4">
+      {/* Stat cards: show 3 placeholders */}
+      <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[1, 2, 3].map((i) => (
+          <StatCardSkeleton key={i} />
+        ))}
+      </div>
+      <PieChartSkeleton />
+    </div>
+  );
+}
+
+// ── Main Component ────────────────────────────────────────────────────────────
+
 export default function DeviceStatCardsSection() {
-  const {t} = useTranslation();
-  // Default to today in YYYY-MM-DD format
+  const { t } = useTranslation();
   const today = new Date().toISOString().split("T")[0];
 
   const [selectedDate, setSelectedDate] = useState(today);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Get device cards for the selected date
+  // Simulate async date change with brief loading state
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsLoading(true);
+    const value = e.target.value;
+    // Use a short timeout to allow the skeleton to flash in on date switch
+    setTimeout(() => {
+      setSelectedDate(value);
+      setIsLoading(false);
+    }, 400);
+  };
+
   const enrichedDeviceCards = useMemo(() => {
     const dataForDate = dateWiseData[selectedDate as keyof typeof dateWiseData];
     if (!dataForDate) return fallbackData;
 
-    const devices: Device[] = 'devices' in dataForDate ? dataForDate.devices : [];
+    const devices: Device[] = "devices" in dataForDate ? dataForDate.devices : [];
 
     return (dataForDate.deviceCards ?? []).map((card) => {
-      // Decide which devices to show based on card title
       let filteredDevices = devices;
       if (card.title === "Online") {
-        filteredDevices = devices.filter(d => d.connected);
+        filteredDevices = devices.filter((d) => d.connected);
       } else if (card.title === "Offline") {
-        filteredDevices = devices.filter(d => !d.connected);
+        filteredDevices = devices.filter((d) => !d.connected);
       }
 
-      const tableRows = filteredDevices.map(d => ({
+      const tableRows = filteredDevices.map((d) => ({
         name: d.name,
         serialNumber: d.serialNumber,
         ipAddress: d.ipAddress,
@@ -47,12 +77,8 @@ export default function DeviceStatCardsSection() {
 
       return {
         ...card,
-        relatedDevices: devices,           // optional — keep for compatibility
-
-        // ── New modal control fields ──
+        relatedDevices: devices,
         modalTitle: `${t(`deviceSection.${card.title}`)} ${t("deviceSection.Devices")}`,
-        // modalSubtitle: `${filteredDevices.length} device${filteredDevices.length !== 1 ? 's' : ''} found`,
-
         tableData: tableRows,
         tableColumns: [
           {
@@ -106,37 +132,58 @@ export default function DeviceStatCardsSection() {
   const hasData = enrichedDeviceCards.length > 0;
 
   return (
-    <div className="space-y-6">
-      {/* Header + Date Picker – consistent style with EmpAttendanceSection */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <h2 className="text-lg text-[var(--text-grey-color)] font-semibold">{t("DeviceStatus")}</h2>
+    <>
+      {/* Shimmer keyframe — injected once, no extra CSS file needed */}
+      {/* <style>{`
+        @keyframes shimmer {
+          100% { transform: translateX(100%); }
+        }
+      `}</style> */}
 
-        <div>
-
-          <input
-            type="date"
-            value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
-            className="
-              px-3 py-2 rounded-lg text-sm
-            "
-          />
-        </div>
-      </div>
-
-      {hasData ? (
-        <div className="flex flex-col md:flex-row gap-4">
-          <StatCardsSection data={enrichedDeviceCards} clickable={true} cards="device cards"/>
-          <PieChart data={enrichedDeviceCards} heading={t("deviceActivityDistribution")} />
-        </div>
-      ) : (
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center text-gray-700 min-h-[220px] flex items-center justify-center">
+      <div className="space-y-6">
+        {/* Header + Date Picker */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <h2 className="text-lg text-[var(--text-grey-color)] font-semibold">
+            {t("DeviceStatus")}
+          </h2>
           <div>
-            <p className="text-lg font-medium">{t("deviceSection.No device data for")} {selectedDate}</p>
-            <p className="mt-2 text-sm">{t("deviceSection.Please select another date")}</p>
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={handleDateChange}
+              className="px-3 py-2 rounded-lg text-sm"
+            />
           </div>
         </div>
-      )}
-    </div>
+
+        {/* Content area */}
+        {isLoading ? (
+          <DeviceStatCardsSkeleton />
+        ) : hasData ? (
+          <div className="flex flex-col md:flex-row gap-4">
+            <StatCardsSection
+              data={enrichedDeviceCards}
+              clickable={true}
+              cards="device cards"
+            />
+            <PieChart
+              data={enrichedDeviceCards}
+              heading={t("deviceActivityDistribution")}
+            />
+          </div>
+        ) : (
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center text-gray-700 min-h-[220px] flex items-center justify-center">
+            <div>
+              <p className="text-lg font-medium">
+                {t("deviceSection.No device data for")} {selectedDate}
+              </p>
+              <p className="mt-2 text-sm">
+                {t("deviceSection.Please select another date")}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 }

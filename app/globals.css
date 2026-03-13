@@ -131,3 +131,7 @@ a, summary, button {
 .animate-slideUp {
   animation: slideUp 0.3s ease-out;
 }
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
