@@ -845,4 +845,72 @@ export const dateWiseData = {
       {serialNumber: "DEV-00773", name: "Access Point - Floor 4", connected: true, ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"}
   ] as Device[],
   },
+  "2026-03-14": {
+    statCards: [
+      { title: "Active Members", value: 234, color: "var(--color-active-members)" },
+
+      { title: "Present",  value: 186, percentage: 79, color: "var(--color-present)" },  // 186 / 234 ≈ 79%
+      { title: "Absent",   value: 18,  percentage: 8,  color: "var(--color-absent)" },  // 18 / 234 ≈ 8%
+      { title: "Late",     value: 12,  percentage: 5,  color: "var(--color-late)" },  // 12 / 234 ≈ 5%
+      { title: "Leave",    value: 9,   percentage: 4,  color: "var(--color-leave)" },  // 9 / 234 ≈ 4%
+      { title: "Holiday",  value: 5,   percentage: 2,  color: "var(--color-holiday)" },  // 5 / 234 ≈ 2%
+      { title: "Week Off", value: 4,   percentage: 2,  color: "var(--color-weekoff)" },  // 4 / 234 ≈ 2%
+    ] as StatCardProps[],
+
+    deviceCards: [
+      { title: "Total Devices", value: 20, color: "var(--color-total-devices)" },
+      { title: "Online",  value: 16, percentage: 80, color: "var(--color-device-online)" }, // 16 / 20 = 80%
+      { title: "Offline", value: 4,  percentage: 20, color: "var(--color-device-offline)" }, // 4 / 20 = 20%
+      { title: "Logs", value: 10005, color: "var(--color-device-logs)" },
+    ] as StatCardProps[],
+    leaveCards : [
+      { title: "Leave Requests", value: 248, color: "var(--color-active-members)" },
+      { title: "Pending",             value: 87,  percentage: 35, color: "var(--color-late)" },
+      { title: "Approved",            value: 132, percentage: 53, color: "var(--color-present)" },
+      { title: "Rejected",            value: 29,  percentage: 12, color: "var(--color-absent)" },
+    ] as StatCardProps[],
+
+    leaveInformation : [
+      { employeeName: "Aarav Sharma",   employeeId: "EMP-1023", leaveCode: "CL",  fromDate: "2025-03-10", toDate: "2025-03-12", appliedOn: "2025-02-28", status: "Approved" },
+      { employeeName: "Priya Patel",    employeeId: "EMP-4567", leaveCode: "SL",  fromDate: "2025-03-15", toDate: "2025-03-15", appliedOn: "2025-03-05", status: "Pending"  },
+      { employeeName: "Rahul Verma",    employeeId: "EMP-8912", leaveCode: "PL",  fromDate: "2025-02-20", toDate: "2025-03-05", appliedOn: "2025-02-10", status: "Approved" },
+      { employeeName: "Sneha Kapoor",   employeeId: "EMP-2345", leaveCode: "ML",  fromDate: "2025-03-18", toDate: "2025-04-15", appliedOn: "2025-03-01", status: "Pending"  },
+      { employeeName: "Vikram Singh",   employeeId: "EMP-6789", leaveCode: "CL",  fromDate: "2025-03-22", toDate: "2025-03-22", appliedOn: "2025-03-20", status: "Rejected" },
+      { employeeName: "Ananya Roy",     employeeId: "EMP-1357", leaveCode: "PL",  fromDate: "2025-04-01", toDate: "2025-04-07", appliedOn: "2025-03-15", status: "Pending"  },
+      { employeeName: "Karan Mehta",    employeeId: "EMP-9991", leaveCode: "SL",  fromDate: "2025-03-05", toDate: "2025-03-06", appliedOn: "2025-03-02", status: "Approved" },
+    ] as LeaveInfo[],
+    departmentData: [
+        { department: "Sales",     total: 35, present: 31, absent: 1, late: 1, leave: 1, holiday: 0, weekOff: 1 },
+        { department: "HR",        total: 10, present: 10, absent: 0, late: 0, leave: 0, holiday: 0, weekOff: 0 },
+        { department: "IT",        total: 25, present: 18, absent: 3, late: 1, leave: 2, holiday: 1, weekOff: 0 },
+        { department: "Marketing", total: 51, present: 45, absent: 1, late: 1, leave: 1, holiday: 1, weekOff: 2 },
+    ] as DepartmentAttendance[],
+
+    shiftCoverage: [
+      { hour: 0, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 20 }] },
+      { hour: 1, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 19 }] },
+      { hour: 2, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 1 },  { shiftCode: "NIG", employees: 18 }] },
+      { hour: 3, shifts: [{ shiftCode: "MOR", employees: 2 },  { shiftCode: "GEN", employees: 1 },  { shiftCode: "NIG", employees: 17 }] },
+      { hour: 4, shifts: [{ shiftCode: "MOR", employees: 4 },  { shiftCode: "GEN", employees: 0 },  { shiftCode: "NIG", employees: 16 }] },
+      { hour: 5, shifts: [{ shiftCode: "MOR", employees: 10 }, { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 14 }] },
+      { hour: 6, shifts: [{ shiftCode: "MOR", employees: 16 }, { shiftCode: "GEN", employees: 6 },  { shiftCode: "NIG", employees: 12 }] },
+      { hour: 7, shifts: [{ shiftCode: "MOR", employees: 22 }, { shiftCode: "GEN", employees: 12 }, { shiftCode: "NIG", employees: 9 }] },
+      { hour: 8, shifts: [{ shiftCode: "MOR", employees: 25 }, { shiftCode: "GEN", employees: 20 }, { shiftCode: "NIG", employees: 7 }] },
+      { hour: 9, shifts: [{ shiftCode: "MOR", employees: 27 }, { shiftCode: "GEN", employees: 30 }, { shiftCode: "NIG", employees: 5 }] },
+      { hour: 10, shifts: [{ shiftCode: "MOR", employees: 28 }, { shiftCode: "GEN", employees: 32 }, { shiftCode: "NIG", employees: 4 }] },
+      { hour: 11, shifts: [{ shiftCode: "MOR", employees: 26 }, { shiftCode: "GEN", employees: 34 }, { shiftCode: "NIG", employees: 4 }] },
+      { hour: 12, shifts: [{ shiftCode: "MOR", employees: 23 }, { shiftCode: "GEN", employees: 33 }, { shiftCode: "NIG", employees: 5 }] },
+      { hour: 13, shifts: [{ shiftCode: "MOR", employees: 19 }, { shiftCode: "GEN", employees: 29 }, { shiftCode: "NIG", employees: 7 }] },
+      { hour: 14, shifts: [{ shiftCode: "MOR", employees: 15 }, { shiftCode: "GEN", employees: 27 }, { shiftCode: "NIG", employees: 9 }] },
+      { hour: 15, shifts: [{ shiftCode: "MOR", employees: 11 }, { shiftCode: "GEN", employees: 23 }, { shiftCode: "NIG", employees: 11 }] },
+      { hour: 16, shifts: [{ shiftCode: "MOR", employees: 8 },  { shiftCode: "GEN", employees: 20 }, { shiftCode: "NIG", employees: 13 }] },
+      { hour: 17, shifts: [{ shiftCode: "MOR", employees: 6 },  { shiftCode: "GEN", employees: 16 }, { shiftCode: "NIG", employees: 15 }] },
+      { hour: 18, shifts: [{ shiftCode: "MOR", employees: 4 },  { shiftCode: "GEN", employees: 13 }, { shiftCode: "NIG", employees: 17 }] },
+      { hour: 19, shifts: [{ shiftCode: "MOR", employees: 3 },  { shiftCode: "GEN", employees: 9 },  { shiftCode: "NIG", employees: 19 }] },
+      { hour: 20, shifts: [{ shiftCode: "MOR", employees: 2 },  { shiftCode: "GEN", employees: 6 },  { shiftCode: "NIG", employees: 21 }] },
+      { hour: 21, shifts: [{ shiftCode: "MOR", employees: 1 },  { shiftCode: "GEN", employees: 4 },  { shiftCode: "NIG", employees: 22 }] },
+      { hour: 22, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 23 }] },
+      { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 22 }] }
+    ] as HourlyShiftCoverage[],
+  },
 } as const;

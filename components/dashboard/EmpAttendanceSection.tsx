@@ -13,6 +13,7 @@ import PieChartSkeleton from "../common/PieChartSkeleton";
 
 const PieChart = dynamic(() => import("./PieChart"), {
   ssr: false,
+  loading:() => <PieChartSkeleton/>
 });
 
 const fallbackData: { statCards: StatCardProps[]; deviceCards: StatCardProps[] } = {
@@ -40,6 +41,16 @@ export default function EmpAttendanceSection() {
   const today = new Date().toISOString().split("T")[0];
 
   const [selectedDate, setSelectedDate] = useState(today);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsLoading(true);
+    const value = e.target.value;
+    setTimeout(() => {
+      setSelectedDate(value);
+      setIsLoading(false);
+    }, 400);
+  };
 
   // Filter once → memoized
   const dayData = useMemo(() => {
@@ -62,15 +73,15 @@ export default function EmpAttendanceSection() {
           <input
             type="date"
             value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
-            className="
-              px-3 py-2 rounded-lg text-sm
-            "
+            onChange={handleDateChange}
+            className="px-3 py-2 rounded-lg text-sm"
           />
         </div>
       </div>
 
-      {hasData ? (
+      {isLoading ? (
+        <DeviceStatCardsSkeleton />
+      ) :hasData ? (
         <div className="flex flex-col md:flex-row gap-4">
             <StatCardsSection data={statCards} cards="ASa" />
             <PieChart data={statCards} heading={t("attendanceDistribution")} />
