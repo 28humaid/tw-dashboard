@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import StackedAreaChart from "./StackedAreaChart";
+import StackedAreaChart from "../charts/StackedAreaChart";
 import { dateWiseData } from "@/data/DateWiseData";
 import { useTranslation } from "react-i18next";
 // type HourlyShiftCoverage = {

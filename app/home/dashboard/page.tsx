@@ -1,13 +1,13 @@
 import SectionLayout from "@/components/dashboard/SectionLayout";
 import EmpAttendanceSection from "@/components/dashboard/EmpAttendanceSection";
-import DepartmentWiseStripChart from "@/components/dashboard/DepartmentWiseStripChart";
-import ShiftStackedAreaChart from "@/components/dashboard/ShiftStackedAreaChart";
+import DepartmentWiseStripChart from "@/components/dashboard/chartComponents/DepartmentWiseStripChart";
+import ShiftStackedAreaChart from "@/components/dashboard/chartComponents/ShiftStackedAreaChart";
 import ActiveShiftsCarousel from "@/components/dashboard/ActiveShiftsCarousel";
 import DepartmentSection from "@/components/dashboard/DepartmentSection";
 import EmployeesContainer from "@/components/dashboard/empTableComponent/EmployeesContainer";
 import { cookies } from "next/headers";
-import EmpAttendanceTrendChart from "@/components/dashboard/EmpAttendanceTrendChart";
-import DeptAttendanceTrendChart from "@/components/dashboard/DeptAttendanceTrendChart";
+import EmpAttendanceTrendChart from "@/components/dashboard/chartComponents/EmpAttendanceTrendChart";
+import DeptAttendanceTrendChart from "@/components/dashboard/chartComponents/DeptAttendanceTrendChart";
 import DeviceStatCardsSection from "@/components/dashboard/DeviceStatCardsSection";
 import LeaveApprovalSection from "@/components/dashboard/LeaveApprovalSection";
 import AttendanceApprovalSection from "@/components/dashboard/AttendanceApprovalSection";

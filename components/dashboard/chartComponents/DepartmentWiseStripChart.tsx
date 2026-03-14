@@ -1,6 +1,6 @@
 "use client"
 // import { departmentAttendanceData } from "@/data/dashboardData";
-import StripChart from "./StripChart";
+import StripChart from "../charts/StripChart";
 import { dateWiseData } from "@/data/DateWiseData";
 import { useMemo, useState } from "react";
 import { DepartmentAttendance } from "@/types/type";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import StatCardsSection from "@/components/dashboard/StatCardsSection";
 import { Device, StatCardProps } from "@/types/type";
 
@@ -8,10 +8,10 @@ import { Device, StatCardProps } from "@/types/type";
 import { dateWiseData } from "@/data/DateWiseData";
 import { useTranslation } from "react-i18next";
 import dynamic from "next/dynamic";
-import StatCardSkeleton from "../common/StatCardSkeleton";
-import PieChartSkeleton from "../common/PieChartSkeleton";
+import StatCardSkeleton from "../common/loader/StatCardSkeleton";
+import PieChartSkeleton from "../common/loader/PieChartSkeleton";
 
-const PieChart = dynamic(() => import("./PieChart"), {
+const PieChart = dynamic(() => import("./charts/PieChart"), {
   ssr: false,
   loading: () => <PieChartSkeleton />,
 });
@@ -40,7 +40,12 @@ export default function DeviceStatCardsSection() {
   const today = new Date().toISOString().split("T")[0];
 
   const [selectedDate, setSelectedDate] = useState(today);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(()=>{
+    const timer = setTimeout(()=>setIsLoading(false),4000)
+    return () => clearTimeout(timer)
+  },[])
 
   // Simulate async date change with brief loading state
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {

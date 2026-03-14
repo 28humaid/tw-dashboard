@@ -35,7 +35,6 @@ export default function LeaveApprovalSection() {
 
       return {
         ...card,
-        modalTitle: t(`leaveSection.${card.title}`),
         tableData: tableRows,
         tableColumns: [
           {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import StatCardsSection from "@/components/dashboard/StatCardsSection";
 import { StatCardProps } from "@/types/type";
 
@@ -8,10 +8,10 @@ import { StatCardProps } from "@/types/type";
 import { dateWiseData } from "@/data/DateWiseData";
 import { useTranslation } from "react-i18next";
 import dynamic from "next/dynamic";
-import StatCardSkeleton from "../common/StatCardSkeleton";
-import PieChartSkeleton from "../common/PieChartSkeleton";
+import StatCardSkeleton from "../common/loader/StatCardSkeleton";
+import PieChartSkeleton from "../common/loader/PieChartSkeleton";
 
-const PieChart = dynamic(() => import("./PieChart"), {
+const PieChart = dynamic(() => import("./charts/PieChart"), {
   ssr: false,
   loading:() => <PieChartSkeleton/>
 });
@@ -25,7 +25,7 @@ function DeviceStatCardsSkeleton() {
   return (
     <div className="flex flex-col md:flex-row gap-4">
       {/* Stat cards: show 3 placeholders */}
-      <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-4">
         {[1, 2, 3].map((i) => (
           <StatCardSkeleton key={i} />
         ))}
@@ -41,7 +41,12 @@ export default function EmpAttendanceSection() {
   const today = new Date().toISOString().split("T")[0];
 
   const [selectedDate, setSelectedDate] = useState(today);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(()=>{
+    const timer = setTimeout(()=>setIsLoading(false),4000)
+    return () => clearTimeout(timer)
+  },[])
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsLoading(true);
@@ -49,7 +54,7 @@ export default function EmpAttendanceSection() {
     setTimeout(() => {
       setSelectedDate(value);
       setIsLoading(false);
-    }, 400);
+    }, 4000);
   };
 
   // Filter once → memoized
