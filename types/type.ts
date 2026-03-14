@@ -54,7 +54,7 @@ export interface LineConfig<T> {
 export interface AttendanceTrendChartProps<T> {
   data: T[];
   heading: string;
-  lines: LineConfig<T>[];
+  lines: readonly LineConfig<T>[];
   lang?: string;
 }
 
