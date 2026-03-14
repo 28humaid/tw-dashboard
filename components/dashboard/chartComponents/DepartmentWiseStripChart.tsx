@@ -45,7 +45,12 @@ export default function DepartmentWiseStripChart() {
   const hasData = departmentData.length > 0;
 
   return (
-    <div className="bg-[var(--content-background)] p-4 rounded-xl shadow-md border border-gray-200 min-h-[500px]">
+    <div className={`
+      bg-[var(--content-background)]
+      ${isLoading ? 'p-0' : 'p-4'}
+      rounded-xl shadow-md border border-gray-200
+      min-h-[500px]
+    `}>
       {isLoading ? (
         <GraphSkeleton />
       ) : (
