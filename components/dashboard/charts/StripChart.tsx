@@ -1,6 +1,7 @@
 "use client";
 
 import { DepartmentAttendanceStripChartProps } from "@/types/type";
+import { useTranslation } from "react-i18next";
 import {
   BarChart,
   Bar,
@@ -19,6 +20,8 @@ export default function StripChart<
   heading,
   barColor = "var(--color-present)",
 }: DepartmentAttendanceStripChartProps<T>) {
+  const {t} = useTranslation();
+  
   return (
     <div className="w-full bg-[var(--content-background)]">
       {/* <div className="mb-4 flex justify-end text-[var(--content-background)]"> */}
@@ -55,7 +58,7 @@ export default function StripChart<
             <Bar
               dataKey="total"
               fill="var(--color-active-members)"
-              name="Total"
+              name={t("Total")}
               barSize={22}
               // radius={[0, 10, 10, 0]}
             />
@@ -64,7 +67,7 @@ export default function StripChart<
             <Bar
               dataKey="present"
               fill={barColor}
-              name="Present"
+              name={t("Present")}
               barSize={22}
               // radius={[0, 10, 10, 0]}
             />
