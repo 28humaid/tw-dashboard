@@ -1,6 +1,8 @@
+import EmployeeComponent from "@/components/masters/employee/EmployeeComponent"
+
 const EmployeePage = () => {
   return (
-    <div>I am page of Master....Employee</div>
+    <EmployeeComponent/>
   )
 }
 
