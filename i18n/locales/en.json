@@ -175,7 +175,8 @@
       "No Auth Method":"No authentication methods enrolled",
       "Attendance Calender":"Attendance Calender",
       "In": "In",
-      "Out": "Out"
+      "Out": "Out",
+      "Attendance Overview": "Attendance Overview"
   },
   "pagination":{
     "Previous": "Previous",
