@@ -64,6 +64,14 @@ export default function CardDetailsContent({ card }: CardDetailsContentProps) {
             pageSize={5}
             searchPlaceholder={t("card details content.Search...")}
             className="rounded-lg shadow-sm border border-gray-200 overflow-hidden"
+            onEdit={(user) => {
+              // open modal, navigate to /users/edit/123, etc.
+              console.log("Edit", user);
+            }}
+            onDelete={(user) => {
+              // api.delete(`/users/${user.id}`).then(() => remove from local data)
+              console.log("Delete", user);
+            }}
           />
         </div>
       )}

@@ -35,6 +35,7 @@ export default function LeaveApprovalSection() {
 
       return {
         ...card,
+        modalTitle: t(`leaveSection.${card.title}`),
         tableData: tableRows,
         tableColumns: [
           {
@@ -52,8 +53,23 @@ export default function LeaveApprovalSection() {
             header: t("leaveSection.Employee ID"),
             cell: (row: any) => row.employeeId,
           },
+          {
+            id: "leaveCode",
+            header: t("leaveSection.leaveCode"),
+            cell: (row: any) => row.leaveCode,
+          },
+          {
+            id: "fromDate",
+            header: t("leaveSection.fromDate"),
+            cell: (row: any) => row.fromDate,
+          },
+          {
+            id: "toDate",
+            header: t("leaveSection.toDate"),
+            cell: (row: any) => row.toDate,
+          },
         ],
-        tableGridTemplate: "grid-cols-3",
+        tableGridTemplate: "grid-cols-7",
       };
     });
   };

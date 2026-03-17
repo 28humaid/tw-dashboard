@@ -22,7 +22,8 @@
     "Pending": "قيد الانتظار",
     "Approved": "موافق عليه",
     "Rejected": "مرفوض",
-    "Attendance Requests":"طلبات الحضور"
+    "Attendance Requests":"طلبات الحضور",
+    "Total Requests":"إجمالي الطلبات"
   },
   "Total":"الإجمالي",
 
@@ -124,7 +125,10 @@
     "Please select another date":"يرجى اختيار تاريخ آخر",
     "Pending": "طلبات الإجازة قيد الانتظار",
     "Approved": "طلبات الإجازة الموافق عليها",
-    "Rejected": "طلبات الإجازة المرفوضة"
+    "Rejected": "طلبات الإجازة المرفوضة",
+    "leaveCode": "رمز الإجازة",
+    "fromDate": "من تاريخ",
+    "toDate": "إلى تاريخ"
   },
     "card details content":{
     "of total":"من الإجمالي",
@@ -174,5 +178,22 @@
     "pagination":{
       "Previous": "السابق",
       "Next": "التالي"
-    }
+    },
+  "attendanceSection": {
+    "Total Requests":"إجمالي الطلبات",
+    "Pending": "معلق",
+    "Approved": "مقبول",
+    "Rejected": "مرفوض",
+    "Status": "الحالة",
+    "Employee Name": "اسم الموظف",
+    "Employee ID": "رقم الموظف",
+    "Date": "تاريخ الحضور",
+    "Punch": "نوع البصمة",
+    "Requested Time": "الوقت المطلوب",
+    "No correction requests for": "لا توجد طلبات تصحيح حضور ليوم",
+    "Please select another date": "يرجى اختيار تاريخ آخر"
+  },
+  "table": { 
+    "actions": "إجراءات" 
+  }
 }

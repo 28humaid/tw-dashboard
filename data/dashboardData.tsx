@@ -3,7 +3,6 @@ import { Employee, Shift} from "@/types/type";
 import { DeptAttendanceData } from "@/types/type";
 
 export const attendanceData = [
-  { date: "2026-02-19", present: 52, absent: 1, late: 4, leave: 1, holiday: 0, weekOff: 1 },
   { date: "2026-02-20", present: 50, absent: 5, late: 3, leave: 2, holiday: 0, weekOff: 0 },
   { date: "2026-02-21", present: 48, absent: 7, late: 4, leave: 1, holiday: 1, weekOff: 2 },
   { date: "2026-02-22", present: 48, absent: 7, late: 4, leave: 1, holiday: 1, weekOff: 2 },
@@ -24,12 +23,12 @@ export const attendanceData = [
   { date: "2026-03-13", present: 52, absent: 1, late: 4, leave: 1, holiday: 0, weekOff: 1 },
   { date: "2026-03-14", present: 51, absent: 1, late: 5, leave: 0, holiday: 0, weekOff: 2 },
   { date: "2026-03-16", present: 45, absent: 13, late: 20, leave: 1, holiday: 0, weekOff: 1 },
+  { date: "2026-03-17", present: 52, absent: 1, late: 4, leave: 1, holiday: 0, weekOff: 1 },
   // ... more entries up to today
 ];
 
 
 export const deptWiseTrendData: DeptAttendanceData[] = [
-  { date: "2026-02-19", Sales: 29, IT: 42, HR: 11, Marketing: 23 },
   { date: "2026-02-20", Sales: 25, IT: 41, HR: 15, Marketing: 22 },
   { date: "2026-02-21", Sales: 29, IT: 42, HR: 11, Marketing: 23 },
   { date: "2026-02-23", Sales: 25, IT: 41, HR: 15, Marketing: 22 },
@@ -49,6 +48,7 @@ export const deptWiseTrendData: DeptAttendanceData[] = [
   { date: "2026-03-13", Sales: 24, IT: 38, HR: 12, Marketing: 23 },
   { date: "2026-03-14", Sales: 27, IT: 38, HR: 11, Marketing: 20 },
   { date: "2026-03-16", Sales: 27, IT: 40, HR: 9, Marketing: 23 },
+  { date: "2026-03-17", Sales: 29, IT: 42, HR: 11, Marketing: 23 },
 ];
 
 
@@ -92,6 +92,7 @@ export const employees: Employee[] = [
     cardCount: 1,
     pinCount: 0,
     attendance: [
+      { date: "2026-03-17", status: "absent" },
       { date: "2026-03-16", status: "weekoff" },
       { date: "2026-03-14", loginTime: "8:50 AM", logoutTime: "6:10 PM", status: "present" },
       { date: "2026-03-13", loginTime: "9:32 AM", logoutTime: "5:40 PM", status: "late" },
@@ -116,7 +117,7 @@ export const employees: Employee[] = [
       { date: "2026-02-15", loginTime: "9:25 AM", logoutTime: "5:50 PM", status: "late" },
       { date: "2026-02-14", loginTime: "8:58 AM", logoutTime: "6:05 PM", status: "present" },
       { date: "2026-02-13", loginTime: "9:05 AM", logoutTime: "5:55 PM", status: "present" },
-      { date: "2026-02-12", status: "absent" },
+      
     ],
   },
   {
@@ -131,6 +132,7 @@ export const employees: Employee[] = [
     cardCount: 1,
     pinCount: 1,
     attendance: [
+      { date: "2026-03-17", loginTime: "9:28 AM", logoutTime: "5:45 PM", status: "late" },
       { date: "2026-03-16", status: "leave" },
       { date: "2026-03-14", status: "weekoff" },
       { date: "2026-03-13", loginTime: "8:55 AM", logoutTime: "6:05 PM", status: "present" },
@@ -156,7 +158,6 @@ export const employees: Employee[] = [
       { date: "2026-02-14", status: "weekoff" },
       { date: "2026-02-13", loginTime: "8:40 AM", logoutTime: "6:20 PM", status: "present" },
       { date: "2026-02-11", status: "leave" },
-      { date: "2026-02-10", loginTime: "9:28 AM", logoutTime: "5:45 PM", status: "late" },
       { date: "2026-01-31", loginTime: "8:45 AM", logoutTime: "6:10 PM", status: "present" },
     ],
   },
@@ -172,6 +173,7 @@ export const employees: Employee[] = [
     cardCount: 0,
     pinCount: 1,
     attendance: [
+      { date: "2026-03-17", status: "absent" },
       { date: "2026-03-16", loginTime: "8:55 AM", logoutTime: "6:15 PM", status: "present" },
       { date: "2026-03-14", status: "holiday" },
       { date: "2026-03-13", loginTime: "8:55 AM", logoutTime: "6:15 PM", status: "present" },
@@ -197,7 +199,6 @@ export const employees: Employee[] = [
       { date: "2026-02-14", status: "holiday" },
       { date: "2026-02-13", loginTime: "9:08 AM", logoutTime: "6:05 PM", status: "present" },
       { date: "2026-02-11", loginTime: "9:40 AM", logoutTime: "5:55 PM", status: "late"    },
-      { date: "2026-02-10", status: "absent" },
       { date: "2026-01-31", loginTime: "9:18 AM", logoutTime: "6:10 PM", status: "late"    },
     ],
   },
@@ -213,6 +214,7 @@ export const employees: Employee[] = [
     cardCount: 1,
     pinCount: 0,
     attendance: [
+      { date: "2026-03-17", loginTime: "8:45 AM", logoutTime: "6:10 PM", status: "present" },
       { date: "2026-03-16", loginTime: "9:20 AM", logoutTime: "5:50 PM", status: "late"    },
       { date: "2026-03-14", status: "leave" },
       { date: "2026-03-13", status: "absent" },
@@ -238,7 +240,6 @@ export const employees: Employee[] = [
       { date: "2026-02-14", status: "leave" },
       { date: "2026-02-13", status: "weekoff" },
       { date: "2026-02-11", loginTime: "9:15 AM", logoutTime: "5:55 PM", status: "present" },
-      { date: "2026-02-10", loginTime: "8:45 AM", logoutTime: "6:10 PM", status: "present" },
       { date: "2026-01-31", loginTime: "8:52 AM", logoutTime: "6:15 PM", status: "present" },
     ],
   },
@@ -254,6 +255,7 @@ export const employees: Employee[] = [
     cardCount: 1,
     pinCount: 1,
     attendance: [
+      { date: "2026-03-17", status: "leave" },
       { date: "2026-03-16", loginTime: "8:48 AM", logoutTime: "6:00 PM", status: "present" },
       { date: "2026-03-14", status: "weekoff" },
       { date: "2026-03-13", loginTime: "8:48 AM", logoutTime: "6:00 PM", status: "present" },
@@ -279,7 +281,6 @@ export const employees: Employee[] = [
       { date: "2026-02-14", status: "weekoff" },
       { date: "2026-02-13", loginTime: "9:10 AM", logoutTime: "5:58 PM", status: "present" },
       { date: "2026-02-11", loginTime: "9:30 AM", logoutTime: "6:05 PM", status: "late"    },
-      { date: "2026-02-10", status: "leave" },
       { date: "2026-01-31", loginTime: "8:58 AM", logoutTime: "6:08 PM", status: "present" },
     ],
   },
@@ -295,6 +296,7 @@ export const employees: Employee[] = [
     cardCount: 1,
     pinCount: 0,
     attendance: [
+      { date: "2026-03-17", status: "absent" },
       { date: "2026-03-16", loginTime: "9:08 AM", logoutTime: "6:15 PM", status: "late"    },
       { date: "2026-03-14", status: "holiday" },
       { date: "2026-03-13", loginTime: "9:08 AM", logoutTime: "6:15 PM", status: "late"    },
@@ -320,7 +322,6 @@ export const employees: Employee[] = [
       { date: "2026-02-14", status: "holiday" },
       { date: "2026-02-13", loginTime: "8:55 AM", logoutTime: "6:00 PM", status: "present" },
       { date: "2026-02-11", loginTime: "9:18 AM", logoutTime: "5:45 PM", status: "present" },
-      { date: "2026-02-10", status: "absent" },
       { date: "2026-01-31", loginTime: "9:22 AM", logoutTime: "5:40 PM", status: "late"    },
     ],
   },
@@ -336,6 +337,7 @@ export const employees: Employee[] = [
     cardCount: 2,
     pinCount: 1,
     attendance: [
+      { date: "2026-03-17", status: "leave" },
       { date: "2026-03-16", loginTime: "9:15 AM", logoutTime: "5:50 PM", status: "late"    },
       { date: "2026-03-14", loginTime: "9:15 AM", logoutTime: "5:50 PM", status: "late"    },
       { date: "2026-03-13", loginTime: "8:58 AM", logoutTime: "5:45 PM", status: "present" },
@@ -361,7 +363,6 @@ export const employees: Employee[] = [
       { date: "2026-02-14", loginTime: "9:15 AM", logoutTime: "5:50 PM", status: "late"    },
       { date: "2026-02-13", status: "weekoff" },
       { date: "2026-02-11", loginTime: "9:00 AM", logoutTime: "6:10 PM", status: "present" },
-      { date: "2026-02-10", status: "leave" },
       { date: "2026-01-31", loginTime: "8:50 AM", logoutTime: "5:50 PM", status: "present" },
     ],
   },
@@ -377,6 +378,7 @@ export const employees: Employee[] = [
     cardCount: 1,
     pinCount: 0,
     attendance: [
+      { date: "2026-03-17", status: "absent" },
       { date: "2026-03-16", loginTime: "8:48 AM", logoutTime: "6:00 PM", status: "present" },
       { date: "2026-03-14", status: "weekoff" },
       { date: "2026-03-13", loginTime: "8:48 AM", logoutTime: "6:00 PM", status: "present" },
@@ -402,7 +404,6 @@ export const employees: Employee[] = [
       { date: "2026-02-14", status: "weekoff" },
       { date: "2026-02-13", loginTime: "8:55 AM", logoutTime: "6:05 PM", status: "present" },
       { date: "2026-02-11", loginTime: "9:25 AM", logoutTime: "5:40 PM", status: "late"    },
-      { date: "2026-02-10", status: "absent" },
       { date: "2026-01-31", loginTime: "9:10 AM", logoutTime: "5:55 PM", status: "late"    },
     ],
   }

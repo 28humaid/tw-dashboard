@@ -22,7 +22,8 @@
     "Pending":"Pending",
     "Approved":"Approved",
     "Rejected":"Rejected",
-    "Attendance Requests":"Attendance Requests"
+    "Attendance Requests":"Attendance Requests",
+    "Total Requests":"Total Requests"
   },
   "Total":"Total",
 
@@ -130,7 +131,10 @@
     "Please select another date":"Please select another date",
     "Pending": "Pending Leave Requests",
     "Approved": "Approved Leave Requests",
-    "Rejected": "Rejected Leave Requests"
+    "Rejected": "Rejected Leave Requests",
+    "leaveCode":"Leave Code", 
+    "fromDate":"From Date", 
+    "toDate":"To Date"
   },
   "card details content":{
     "of total":"of total",
@@ -181,5 +185,22 @@
   "pagination":{
     "Previous": "Previous",
     "Next": "Next"
-  }
+  },
+  "attendanceSection": {
+    "Total Requests":"Total Requests",
+    "Pending": "Pending",
+    "Approved": "Approved",
+    "Rejected": "Rejected",
+    "Status": "Status",
+    "Employee Name": "Employee Name",
+    "Employee ID": "Employee ID",
+    "Date": "Attendance Date",
+    "Punch": "Punch Type",
+    "Requested Time": "Requested Punch Time",
+    "No correction requests for": "No attendance correction requests for",
+    "Please select another date": "Please select another date"
+  },
+  "table": { 
+    "actions": "Actions" 
+  } 
 }

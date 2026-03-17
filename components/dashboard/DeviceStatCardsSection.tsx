@@ -129,7 +129,7 @@ export default function DeviceStatCardsSection() {
             className: "text-gray-600",
           },
         ],
-        tableGridTemplate: "grid-cols-[2.4fr_2.6fr_1.6fr_1.5fr_1.3fr]",
+        tableGridTemplate: "grid-cols-[2fr_2.6fr_1.6fr_1.5fr_1.3fr_1.3fr]",
       };
     });
   }, [selectedDate, t]);

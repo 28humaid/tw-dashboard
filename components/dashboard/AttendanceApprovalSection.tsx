@@ -1,76 +1,93 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import { dateWiseData } from "@/data/DateWiseData";
-import { LeaveInfo, StatCardProps } from "@/types/type";    
+import { AttendanceCorrection, StatCardProps } from "@/types/type";
 import DateBasedStatSection from "./DateBasedStatSection";
+import { dateWiseData } from "@/data/DateWiseData";
 
 export default function AttendanceApprovalSection() {
   const { t } = useTranslation();
 
-  const getLeaveCards = (dataForDate: any): StatCardProps[] => {
-    const leaveInformation: LeaveInfo[] = dataForDate.leaveInformation ?? [];
-    const leaveCards = dataForDate.leaveCards ?? [];
+  const getAttendanceCards = (dataForDate: any): StatCardProps[] => {
+    const corrections: AttendanceCorrection[] = dataForDate.attendanceCorrections ?? [];
+    const cards: StatCardProps[] = dataForDate.attendanceCards ?? [];
 
-    return leaveCards.map((card: any) => {
-      let filteredLeaves = leaveInformation;
+    return cards.map((card: any) => {
+      let filtered = corrections;
 
       if (card.title === "Pending") {
-        filteredLeaves = leaveInformation.filter((l) => l.status === "Pending");
+        filtered = corrections.filter((c) => c.status === "Pending");
       } else if (card.title === "Approved") {
-        filteredLeaves = leaveInformation.filter((l) => l.status === "Approved");
+        filtered = corrections.filter((c) => c.status === "Approved");
       } else if (card.title === "Rejected") {
-        filteredLeaves = leaveInformation.filter((l) => l.status === "Rejected");
+        filtered = corrections.filter((c) => c.status === "Rejected");
       }
 
-      const tableRows = filteredLeaves.map((leave) => ({
-        employeeName: leave.employeeName,
-        employeeId: leave.employeeId,
-        leaveCode: leave.leaveCode,
-        fromDate: leave.fromDate,
-        toDate: leave.toDate,
-        appliedOn: leave.appliedOn,
-        status: leave.status,
+      const tableRows = filtered.map((item) => ({
+        employeeName: item.employeeName,
+        employeeId: item.employeeId,
+        attendanceDate: item.attendanceDate,
+        punchType: item.punchType,
+        punchTime: item.punchTime || "—",
+        requestedPunchTime: item.requestedPunchTime,
+        reason: item.reason || "—",
+        appliedOn: item.appliedOn,
+        status: item.status,
       }));
 
       return {
         ...card,
-        modalTitle: t(`leaveSection.${card.title}`),
+        modalTitle: t(`attendanceSection.${card.title}`),
         tableData: tableRows,
         tableColumns: [
           {
             id: "status",
-            header: t("leaveSection.Status"),
+            header: t("attendanceSection.Status"),
             cell: (row: any) => row.status,
           },
           {
             id: "employeeName",
-            header: t("leaveSection.Employee Name"),
+            header: t("attendanceSection.Employee Name"),
             cell: (row: any) => row.employeeName,
           },
           {
             id: "employeeId",
-            header: t("leaveSection.Employee ID"),
+            header: t("attendanceSection.Employee ID"),
             cell: (row: any) => row.employeeId,
           },
+          {
+            id: "attendanceDate",
+            header: t("attendanceSection.Date"),
+            cell: (row: any) => row.attendanceDate,
+          },
+          {
+            id: "punchType",
+            header: t("attendanceSection.Punch"),
+            cell: (row: any) => row.punchType,
+          },
+          {
+            id: "requestedPunchTime",
+            header: t("attendanceSection.Requested Time"),
+            cell: (row: any) => row.requestedPunchTime,
+          },
         ],
-        tableGridTemplate: "grid-cols-3",
+        tableGridTemplate: "grid-cols-7", // adjust according to how many columns you show
       };
     });
   };
 
   return (
     <DateBasedStatSection
-      title={t("stats.Leave Requests")}
+      title={t("stats.Attendance Requests")}
       dateWiseData={dateWiseData}
-      getCards={getLeaveCards}
+      getCards={getAttendanceCards}
       emptyMessage={(date) => (
         <div>
           <p className="text-lg font-medium">
-            {t("leaveSection.No leave data for")} {date}
+            {t("attendanceSection.No correction requests for")} {date}
           </p>
           <p className="mt-2 text-sm">
-            {t("leaveSection.Please select another date")}
+            {t("attendanceSection.Please select another date")}
           </p>
         </div>
       )}

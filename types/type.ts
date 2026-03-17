@@ -159,3 +159,16 @@ export type LoginFormData = {
   username:string;
   password:string;
 }
+
+export interface AttendanceCorrection {
+  employeeName: string;
+  employeeId: string;
+  attendanceDate: string;      // e.g. "2026-03-16"
+  punchTime?: string;          // original / expected punch (e.g. "09:14")
+  requestedPunchTime: string;  // what employee requested (e.g. "09:00")
+  punchType: "IN" | "OUT";
+  reason?: string;
+  appliedOn: string;
+  status: "Pending" | "Approved" | "Rejected";
+  requestedBy?: string;        // optional: employee or admin
+}
