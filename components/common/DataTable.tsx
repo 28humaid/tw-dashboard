@@ -138,20 +138,20 @@ export default function DataTable<T>({
     <div className={`shadow-lg rounded-lg overflow-hidden ${className}`}>
       {/* Search bar */}
       {searchable && (
-        <div className="p-4 border-b">
+        <div className="p-4 border-b border-gray-300">
           <input
             type="search"
             value={searchTerm}
             onChange={(e) => handleSearch(e.target.value)}
             placeholder={t(searchPlaceholder)}
             aria-label="Search table"
-            className="w-full max-w-md px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full max-w-md px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
       )}
 
       <div className="overflow-x-auto">
-        <div className={`${minWidth} text-sm`}>
+        <div className={`${minWidth} text-sm text-center`}>
           {/* Header */}
           <div
             className={`grid ${effectiveGridCols} bg-[var(--content-background)] p-3 font-medium text-xs uppercase tracking-wide sticky top-0 z-10`}
@@ -224,7 +224,7 @@ export default function DataTable<T>({
 
       {/* Pagination */}
       {paginated && totalItems > pageSize && (
-        <div className="flex items-center justify-between px-4 py-3 bg-gray-50 text-sm border-t">
+        <div className="flex items-center justify-between px-4 py-3 bg-gray-50 text-sm border-t border-gray-100">
           <div className="text-gray-600">
             Showing {startIndex + 1}–{Math.min(startIndex + pageSize, totalItems)} of{" "}
             {totalItems}

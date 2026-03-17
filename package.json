@@ -9,7 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "@splidejs/react-splide": "^0.7.12",
+    "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "i18next": "^25.8.5",
     "i18next-resources-to-backend": "^1.2.1",
@@ -19,7 +21,9 @@
     "react-dom": "19.2.3",
     "react-hook-form": "^7.71.2",
     "react-i18next": "^16.5.4",
-    "recharts": "^3.7.0"
+    "recharts": "^3.7.0",
+    "tailwind-merge": "^3.5.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

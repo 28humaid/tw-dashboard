@@ -172,3 +172,31 @@ export interface AttendanceCorrection {
   status: "Pending" | "Approved" | "Rejected";
   requestedBy?: string;        // optional: employee or admin
 }
+
+export type CompanyStatus = "ACTIVE" | "INACTIVE";
+
+export interface Company {
+  status: CompanyStatus;                  // enum
+  code: string;                                // unique org code
+  name: string;                                // full legal name
+  shortName: string;                           // short display name
+  industryNature: string;                      // industry type
+  address: string;                             // full address
+  phoneNumber: string;                         // contact number
+  email: string;                               // official email
+
+  registrationNumber: string;                  // company registration no
+  pan: string;                                 // PAN number
+  tan?: string;                                 // Tax Deduction Account Number
+  pfNumber?: string;                            // Provident Fund number
+  lcNumber?: string;                            // License/LC number
+
+  maxUser: number;                             // allowed users
+  maxDevice: number;                           // allowed devices
+
+  validUpto: string;                           // ISO date (YYYY-MM-DD)
+  registrationDate: string;                    // ISO date
+
+  createdAt?: string;                          // optional metadata
+  updatedAt?: string;
+}

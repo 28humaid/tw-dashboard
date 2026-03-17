@@ -1,5 +1,7 @@
+import CompanyComponent from "@/components/masters/company/CompanyComponent";
+
 export default function CompanyPage(){
     return(
-        <>I am page of Masters...Company</>
+        <CompanyComponent/>
     )
 }
