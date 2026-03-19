@@ -2,149 +2,6 @@ import { AttendanceCorrection, DepartmentAttendance, Device, HourlyShiftCoverage
 
 export const dateWiseData = {
 
-  "2026-02-27": {
-    statCards: [
-      { title: "Active Members", value: 234, color: "var(--color-active-members)" },
-
-      { title: "Present",  value: 186, percentage: 79, color: "var(--color-present)" },  // 186 / 234 ≈ 79%
-      { title: "Absent",   value: 18,  percentage: 8,  color: "var(--color-absent)" },  // 18 / 234 ≈ 8%
-      { title: "Late",     value: 12,  percentage: 5,  color: "var(--color-late)" },  // 12 / 234 ≈ 5%
-      { title: "Leave",    value: 9,   percentage: 4,  color: "var(--color-leave)" },  // 9 / 234 ≈ 4%
-      { title: "Holiday",  value: 5,   percentage: 2,  color: "var(--color-holiday)" },  // 5 / 234 ≈ 2%
-      { title: "Week Off", value: 4,   percentage: 2,  color: "var(--color-weekoff)" },  // 4 / 234 ≈ 2%
-    ] as StatCardProps[],
-
-    deviceCards: [
-      { title: "Total Devices", value: 20, color: "var(--color-total-devices)" },
-
-      { title: "Online",  value: 16, percentage: 80, color: "var(--color-device-online)" }, // 16 / 20 = 80%
-      { title: "Offline", value: 4,  percentage: 20, color: "var(--color-device-offline)" }, // 4 / 20 = 20%
-      { title: "Logs", value: 10760, color: "var(--color-device-logs)" },
-    ] as StatCardProps[],
-
-    departmentData: [
-        { department: "Sales",     total: 35, present: 31, absent: 1, late: 1, leave: 1, holiday: 0, weekOff: 1 },
-        { department: "HR",        total: 10, present: 10, absent: 0, late: 0, leave: 0, holiday: 0, weekOff: 0 },
-        { department: "IT",        total: 25, present: 18, absent: 3, late: 1, leave: 2, holiday: 1, weekOff: 0 },
-        { department: "Marketing", total: 51, present: 45, absent: 1, late: 1, leave: 1, holiday: 1, weekOff: 2 },
-    ] as DepartmentAttendance[],
-
-    shiftCoverage: [
-      { hour: 0, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 20 }] },
-      { hour: 1, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 19 }] },
-      { hour: 2, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 1 },  { shiftCode: "NIG", employees: 18 }] },
-      { hour: 3, shifts: [{ shiftCode: "MOR", employees: 2 },  { shiftCode: "GEN", employees: 1 },  { shiftCode: "NIG", employees: 17 }] },
-      { hour: 4, shifts: [{ shiftCode: "MOR", employees: 4 },  { shiftCode: "GEN", employees: 0 },  { shiftCode: "NIG", employees: 16 }] },
-      { hour: 5, shifts: [{ shiftCode: "MOR", employees: 10 }, { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 14 }] },
-      { hour: 6, shifts: [{ shiftCode: "MOR", employees: 16 }, { shiftCode: "GEN", employees: 6 },  { shiftCode: "NIG", employees: 12 }] },
-      { hour: 7, shifts: [{ shiftCode: "MOR", employees: 22 }, { shiftCode: "GEN", employees: 12 }, { shiftCode: "NIG", employees: 9 }] },
-      { hour: 8, shifts: [{ shiftCode: "MOR", employees: 25 }, { shiftCode: "GEN", employees: 20 }, { shiftCode: "NIG", employees: 7 }] },
-      { hour: 9, shifts: [{ shiftCode: "MOR", employees: 27 }, { shiftCode: "GEN", employees: 30 }, { shiftCode: "NIG", employees: 5 }] },
-      { hour: 10, shifts: [{ shiftCode: "MOR", employees: 28 }, { shiftCode: "GEN", employees: 32 }, { shiftCode: "NIG", employees: 4 }] },
-      { hour: 11, shifts: [{ shiftCode: "MOR", employees: 26 }, { shiftCode: "GEN", employees: 34 }, { shiftCode: "NIG", employees: 4 }] },
-      { hour: 12, shifts: [{ shiftCode: "MOR", employees: 23 }, { shiftCode: "GEN", employees: 33 }, { shiftCode: "NIG", employees: 5 }] },
-      { hour: 13, shifts: [{ shiftCode: "MOR", employees: 19 }, { shiftCode: "GEN", employees: 29 }, { shiftCode: "NIG", employees: 7 }] },
-      { hour: 14, shifts: [{ shiftCode: "MOR", employees: 15 }, { shiftCode: "GEN", employees: 27 }, { shiftCode: "NIG", employees: 9 }] },
-      { hour: 15, shifts: [{ shiftCode: "MOR", employees: 11 }, { shiftCode: "GEN", employees: 23 }, { shiftCode: "NIG", employees: 11 }] },
-      { hour: 16, shifts: [{ shiftCode: "MOR", employees: 8 },  { shiftCode: "GEN", employees: 20 }, { shiftCode: "NIG", employees: 13 }] },
-      { hour: 17, shifts: [{ shiftCode: "MOR", employees: 6 },  { shiftCode: "GEN", employees: 16 }, { shiftCode: "NIG", employees: 15 }] },
-      { hour: 18, shifts: [{ shiftCode: "MOR", employees: 4 },  { shiftCode: "GEN", employees: 13 }, { shiftCode: "NIG", employees: 17 }] },
-      { hour: 19, shifts: [{ shiftCode: "MOR", employees: 3 },  { shiftCode: "GEN", employees: 9 },  { shiftCode: "NIG", employees: 19 }] },
-      { hour: 20, shifts: [{ shiftCode: "MOR", employees: 2 },  { shiftCode: "GEN", employees: 6 },  { shiftCode: "NIG", employees: 21 }] },
-      { hour: 21, shifts: [{ shiftCode: "MOR", employees: 1 },  { shiftCode: "GEN", employees: 4 },  { shiftCode: "NIG", employees: 22 }] },
-      { hour: 22, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 23 }] },
-      { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 22 }] }
-    ] as HourlyShiftCoverage[],
-    devices: [
-      {serialNumber: "DEV-00124", name: "Main Gateway - Lobby",      connected: true,  ipAddress: "192.168.1.104", lastConnected: "Just now"},
-      {serialNumber: "DEV-00891", name: "Camera - Entrance",        connected: false, ipAddress: "192.168.1.45",  lastConnected: "3 hours ago"},
-      {serialNumber: "DEV-00337", name: "Sensor - Server Room",     connected: true,  ipAddress: "10.0.0.78",    lastConnected: "2 minutes ago"},
-      {serialNumber: "DEV-00912", name: "Access Point - Floor 2",   connected: true,  ipAddress: "192.168.2.15", lastConnected: "15 minutes ago"},
-      {serialNumber: "DEV-00456", name: "Thermostat - Conference",  connected: false, ipAddress: "192.168.1.89", lastConnected: "Yesterday 23:41"},
-      {serialNumber: "DEV-00723", name: "Doorbell - Back Gate",     connected: true,  ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"},
-      {serialNumber: "DEV-00773", name: "Access Point - Floor 4",   connected: true,  ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"}
-    ] as Device[],
-  },
-  "2026-02-28": {
-    statCards: [
-      { title: "Active Members", value: 234, color: "var(--color-active-members)" },
-
-      { title: "Present",  value: 186, percentage: 79, color: "var(--color-present)" },  // 186 / 234 ≈ 79%
-      { title: "Absent",   value: 18,  percentage: 8,  color: "var(--color-absent)" },  // 18 / 234 ≈ 8%
-      { title: "Late",     value: 12,  percentage: 5,  color: "var(--color-late)" },  // 12 / 234 ≈ 5%
-      { title: "Leave",    value: 9,   percentage: 4,  color: "var(--color-leave)" },  // 9 / 234 ≈ 4%
-      { title: "Holiday",  value: 5,   percentage: 2,  color: "var(--color-holiday)" },  // 5 / 234 ≈ 2%
-      { title: "Week Off", value: 4,   percentage: 2,  color: "var(--color-weekoff)" },  // 4 / 234 ≈ 2%
-    ] as StatCardProps[],
-
-    deviceCards: [
-      { title: "Total Devices", value: 20, color: "var(--color-total-devices)" },
-
-      { title: "Online",  value: 16, percentage: 80, color: "var(--color-device-online)" }, // 16 / 20 = 80%
-      { title: "Offline", value: 4,  percentage: 20, color: "var(--color-device-offline)" }, // 4 / 20 = 20%
-      { title: "Logs", value: 7609, color: "var(--color-device-logs)" },
-    ] as StatCardProps[],
-
-    leaveCards : [
-      { title: "Leave Requests", value: 315, color: "var(--color-active-members)" },
-      { title: "Pending",             value: 142, percentage: 45, color: "var(--color-late)" },
-      { title: "Approved",            value: 138, percentage: 44, color: "var(--color-present)" },
-      { title: "Rejected",            value: 35,  percentage: 11, color: "var(--color-absent)" },
-    ] as StatCardProps[],
-
-    leaveInformation: [
-      { employeeName: "Neha Gupta",       employeeId: "EMP-3014", leaveCode: "EL", fromDate: "2025-04-05", toDate: "2025-04-08", appliedOn: "2025-03-20", status: "Approved"  },
-      { employeeName: "Rohan Desai",      employeeId: "EMP-5721", leaveCode: "SL", fromDate: "2025-04-12", toDate: "2025-04-12", appliedOn: "2025-04-08", status: "Pending"   },
-      { employeeName: "Ishita Banerjee",  employeeId: "EMP-6489", leaveCode: "CL", fromDate: "2025-03-28", toDate: "2025-03-30", appliedOn: "2025-03-15", status: "Approved"  },
-      { employeeName: "Arjun Malhotra",   employeeId: "EMP-9173", leaveCode: "PL", fromDate: "2025-05-01", toDate: "2025-05-10", appliedOn: "2025-04-10", status: "Pending"   },
-      { employeeName: "Simran Kaur",      employeeId: "EMP-2850", leaveCode: "ML", fromDate: "2025-04-15", toDate: "2025-05-14", appliedOn: "2025-03-25", status: "Approved"  },
-      { employeeName: "Yash Thakur",      employeeId: "EMP-7402", leaveCode: "CL", fromDate: "2025-04-20", toDate: "2025-04-21", appliedOn: "2025-04-18", status: "Rejected"  },
-      { employeeName: "Divya Iyer",       employeeId: "EMP-8635", leaveCode: "SL", fromDate: "2025-04-25", toDate: "2025-04-27", appliedOn: "2025-04-15", status: "Pending"   },
-    ]  as LeaveInfo[],
-
-    departmentData: [
-        { department: "Sales",     total: 35, present: 31, absent: 1, late: 1, leave: 1, holiday: 0, weekOff: 1 },
-        { department: "HR",        total: 10, present: 10, absent: 0, late: 0, leave: 0, holiday: 0, weekOff: 0 },
-        { department: "IT",        total: 25, present: 18, absent: 3, late: 1, leave: 2, holiday: 1, weekOff: 0 },
-        { department: "Marketing", total: 51, present: 45, absent: 1, late: 1, leave: 1, holiday: 1, weekOff: 2 },
-    ] as DepartmentAttendance[],
-
-    shiftCoverage: [
-      { hour: 0, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 20 }] },
-      { hour: 1, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 19 }] },
-      { hour: 2, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 1 },  { shiftCode: "NIG", employees: 18 }] },
-      { hour: 3, shifts: [{ shiftCode: "MOR", employees: 2 },  { shiftCode: "GEN", employees: 1 },  { shiftCode: "NIG", employees: 17 }] },
-      { hour: 4, shifts: [{ shiftCode: "MOR", employees: 4 },  { shiftCode: "GEN", employees: 0 },  { shiftCode: "NIG", employees: 16 }] },
-      { hour: 5, shifts: [{ shiftCode: "MOR", employees: 10 }, { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 14 }] },
-      { hour: 6, shifts: [{ shiftCode: "MOR", employees: 16 }, { shiftCode: "GEN", employees: 6 },  { shiftCode: "NIG", employees: 12 }] },
-      { hour: 7, shifts: [{ shiftCode: "MOR", employees: 22 }, { shiftCode: "GEN", employees: 12 }, { shiftCode: "NIG", employees: 9 }] },
-      { hour: 8, shifts: [{ shiftCode: "MOR", employees: 25 }, { shiftCode: "GEN", employees: 20 }, { shiftCode: "NIG", employees: 7 }] },
-      { hour: 9, shifts: [{ shiftCode: "MOR", employees: 27 }, { shiftCode: "GEN", employees: 30 }, { shiftCode: "NIG", employees: 5 }] },
-      { hour: 10, shifts: [{ shiftCode: "MOR", employees: 28 }, { shiftCode: "GEN", employees: 32 }, { shiftCode: "NIG", employees: 4 }] },
-      { hour: 11, shifts: [{ shiftCode: "MOR", employees: 26 }, { shiftCode: "GEN", employees: 34 }, { shiftCode: "NIG", employees: 4 }] },
-      { hour: 12, shifts: [{ shiftCode: "MOR", employees: 23 }, { shiftCode: "GEN", employees: 33 }, { shiftCode: "NIG", employees: 5 }] },
-      { hour: 13, shifts: [{ shiftCode: "MOR", employees: 19 }, { shiftCode: "GEN", employees: 29 }, { shiftCode: "NIG", employees: 7 }] },
-      { hour: 14, shifts: [{ shiftCode: "MOR", employees: 15 }, { shiftCode: "GEN", employees: 27 }, { shiftCode: "NIG", employees: 9 }] },
-      { hour: 15, shifts: [{ shiftCode: "MOR", employees: 11 }, { shiftCode: "GEN", employees: 23 }, { shiftCode: "NIG", employees: 11 }] },
-      { hour: 16, shifts: [{ shiftCode: "MOR", employees: 8 },  { shiftCode: "GEN", employees: 20 }, { shiftCode: "NIG", employees: 13 }] },
-      { hour: 17, shifts: [{ shiftCode: "MOR", employees: 6 },  { shiftCode: "GEN", employees: 16 }, { shiftCode: "NIG", employees: 15 }] },
-      { hour: 18, shifts: [{ shiftCode: "MOR", employees: 4 },  { shiftCode: "GEN", employees: 13 }, { shiftCode: "NIG", employees: 17 }] },
-      { hour: 19, shifts: [{ shiftCode: "MOR", employees: 3 },  { shiftCode: "GEN", employees: 9 },  { shiftCode: "NIG", employees: 19 }] },
-      { hour: 20, shifts: [{ shiftCode: "MOR", employees: 2 },  { shiftCode: "GEN", employees: 6 },  { shiftCode: "NIG", employees: 21 }] },
-      { hour: 21, shifts: [{ shiftCode: "MOR", employees: 1 },  { shiftCode: "GEN", employees: 4 },  { shiftCode: "NIG", employees: 22 }] },
-      { hour: 22, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 23 }] },
-      { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 22 }] }
-    ] as HourlyShiftCoverage[],
-    devices: [
-      {serialNumber: "DEV-00124", name: "Main Gateway - Lobby", connected: true, ipAddress: "192.168.1.104", lastConnected: "Just now"},
-      {serialNumber: "DEV-00891", name: "Camera - Entrance", connected: false, ipAddress: "192.168.1.45", lastConnected: "3 hours ago"},
-      {serialNumber: "DEV-00337", name: "Sensor - Server Room", connected: true, ipAddress: "10.0.0.78", lastConnected: "2 minutes ago"},
-      {serialNumber: "DEV-00912", name: "Access Point - Floor 2", connected: true, ipAddress: "192.168.2.15", lastConnected: "15 minutes ago"},
-      {serialNumber: "DEV-00456", name: "Thermostat - Conference", connected: false, ipAddress: "192.168.1.89", lastConnected: "Yesterday 23:41"},
-      {serialNumber: "DEV-00723", name: "Doorbell - Back Gate", connected: true, ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"},
-      {serialNumber: "DEV-00773", name: "Access Point - Floor 4", connected: true, ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"}
-  ] as Device[],
-  },
   "2026-03-01": {
     statCards: [
       { title: "Active Members", value: 234, color: "var(--color-active-members)" },
@@ -222,6 +79,36 @@ export const dateWiseData = {
       {serialNumber: "DEV-00723", name: "Doorbell - Back Gate", connected: true, ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"},
       {serialNumber: "DEV-00773", name: "Access Point - Floor 4", connected: true, ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"}
     ] as Device[],
+    attendanceCards: [
+      { title: "Total Requests", value: 51, color: "var(--color-active-members)" },
+      { title: "Pending",        value: 19, percentage: 37, color: "var(--color-late)" },
+      { title: "Approved",       value: 27, percentage: 53, color: "var(--color-present)" },
+      { title: "Rejected",       value: 5,  percentage: 10, color: "var(--color-absent)" },
+    ] as StatCardProps[],
+
+    attendanceCorrections: [
+      {
+        employeeName: "Neha Gupta",
+        employeeId: "EMP-3014",
+        attendanceDate: "2026-03-17",
+        punchTime: "09:21",
+        requestedPunchTime: "09:00",
+        punchType: "IN",
+        reason: "Public transport delay",
+        appliedOn: "2026-03-16",
+        status: "Pending",
+      },
+      {
+        employeeName: "Rohan Desai",
+        employeeId: "EMP-5721",
+        attendanceDate: "2026-03-17",
+        requestedPunchTime: "17:45",
+        punchType: "OUT",
+        reason: "Left early due to family emergency",
+        appliedOn: "2026-03-17",
+        status: "Approved",
+      },
+    ] as AttendanceCorrection[],
   },
   "2026-03-02": {
     statCards: [
@@ -1045,6 +932,209 @@ export const dateWiseData = {
       {serialNumber: "DEV-00773", name: "Access Point - Floor 4",   connected: true,  ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"}
     ] as Device[],
     attendanceCards: [
+      { title: "Total Requests", value: 51, color: "var(--color-active-members)" },
+      { title: "Pending",        value: 19, percentage: 37, color: "var(--color-late)" },
+      { title: "Approved",       value: 27, percentage: 53, color: "var(--color-present)" },
+      { title: "Rejected",       value: 5,  percentage: 10, color: "var(--color-absent)" },
+    ] as StatCardProps[],
+
+    attendanceCorrections: [
+      {
+        employeeName: "Neha Gupta",
+        employeeId: "EMP-3014",
+        attendanceDate: "2026-03-17",
+        punchTime: "09:21",
+        requestedPunchTime: "09:00",
+        punchType: "IN",
+        reason: "Public transport delay",
+        appliedOn: "2026-03-16",
+        status: "Pending",
+      },
+      {
+        employeeName: "Rohan Desai",
+        employeeId: "EMP-5721",
+        attendanceDate: "2026-03-17",
+        requestedPunchTime: "17:45",
+        punchType: "OUT",
+        reason: "Left early due to family emergency",
+        appliedOn: "2026-03-17",
+        status: "Approved",
+      },
+    ] as AttendanceCorrection[],
+  },
+  "2026-03-18": {
+    statCards: [
+      { title: "Active Members", value: 234, color: "var(--color-active-members)" },
+
+      { title: "Present",  value: 186, percentage: 79, color: "var(--color-present)" },  // 186 / 234 ≈ 79%
+      { title: "Absent",   value: 18,  percentage: 8,  color: "var(--color-absent)" },  // 18 / 234 ≈ 8%
+      { title: "Late",     value: 12,  percentage: 5,  color: "var(--color-late)" },  // 12 / 234 ≈ 5%
+      { title: "Leave",    value: 9,   percentage: 4,  color: "var(--color-leave)" },  // 9 / 234 ≈ 4%
+      { title: "Holiday",  value: 5,   percentage: 2,  color: "var(--color-holiday)" },  // 5 / 234 ≈ 2%
+      { title: "Week Off", value: 4,   percentage: 2,  color: "var(--color-weekoff)" },  // 4 / 234 ≈ 2%
+    ] as StatCardProps[],
+
+    deviceCards: [
+      { title: "Total Devices", value: 20, color: "var(--color-total-devices)" },
+
+      { title: "Online",  value: 16, percentage: 80, color: "var(--color-device-online)" }, // 16 / 20 = 80%
+      { title: "Offline", value: 4,  percentage: 20, color: "var(--color-device-offline)" }, // 4 / 20 = 20%
+      { title: "Logs", value: 10760, color: "var(--color-device-logs)" },
+    ] as StatCardProps[],
+
+    departmentData: [
+        { department: "Sales",     total: 35, present: 31, absent: 1, late: 1, leave: 1, holiday: 0, weekOff: 1 },
+        { department: "HR",        total: 10, present: 10, absent: 0, late: 0, leave: 0, holiday: 0, weekOff: 0 },
+        { department: "IT",        total: 25, present: 18, absent: 3, late: 1, leave: 2, holiday: 1, weekOff: 0 },
+        { department: "Marketing", total: 51, present: 45, absent: 1, late: 1, leave: 1, holiday: 1, weekOff: 2 },
+    ] as DepartmentAttendance[],
+
+    shiftCoverage: [
+      { hour: 0, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 20 }] },
+      { hour: 1, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 19 }] },
+      { hour: 2, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 1 },  { shiftCode: "NIG", employees: 18 }] },
+      { hour: 3, shifts: [{ shiftCode: "MOR", employees: 2 },  { shiftCode: "GEN", employees: 1 },  { shiftCode: "NIG", employees: 17 }] },
+      { hour: 4, shifts: [{ shiftCode: "MOR", employees: 4 },  { shiftCode: "GEN", employees: 0 },  { shiftCode: "NIG", employees: 16 }] },
+      { hour: 5, shifts: [{ shiftCode: "MOR", employees: 10 }, { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 14 }] },
+      { hour: 6, shifts: [{ shiftCode: "MOR", employees: 16 }, { shiftCode: "GEN", employees: 6 },  { shiftCode: "NIG", employees: 12 }] },
+      { hour: 7, shifts: [{ shiftCode: "MOR", employees: 22 }, { shiftCode: "GEN", employees: 12 }, { shiftCode: "NIG", employees: 9 }] },
+      { hour: 8, shifts: [{ shiftCode: "MOR", employees: 25 }, { shiftCode: "GEN", employees: 20 }, { shiftCode: "NIG", employees: 7 }] },
+      { hour: 9, shifts: [{ shiftCode: "MOR", employees: 27 }, { shiftCode: "GEN", employees: 30 }, { shiftCode: "NIG", employees: 5 }] },
+      { hour: 10, shifts: [{ shiftCode: "MOR", employees: 28 }, { shiftCode: "GEN", employees: 32 }, { shiftCode: "NIG", employees: 4 }] },
+      { hour: 11, shifts: [{ shiftCode: "MOR", employees: 26 }, { shiftCode: "GEN", employees: 34 }, { shiftCode: "NIG", employees: 4 }] },
+      { hour: 12, shifts: [{ shiftCode: "MOR", employees: 23 }, { shiftCode: "GEN", employees: 33 }, { shiftCode: "NIG", employees: 5 }] },
+      { hour: 13, shifts: [{ shiftCode: "MOR", employees: 19 }, { shiftCode: "GEN", employees: 29 }, { shiftCode: "NIG", employees: 7 }] },
+      { hour: 14, shifts: [{ shiftCode: "MOR", employees: 15 }, { shiftCode: "GEN", employees: 27 }, { shiftCode: "NIG", employees: 9 }] },
+      { hour: 15, shifts: [{ shiftCode: "MOR", employees: 11 }, { shiftCode: "GEN", employees: 23 }, { shiftCode: "NIG", employees: 11 }] },
+      { hour: 16, shifts: [{ shiftCode: "MOR", employees: 8 },  { shiftCode: "GEN", employees: 20 }, { shiftCode: "NIG", employees: 13 }] },
+      { hour: 17, shifts: [{ shiftCode: "MOR", employees: 6 },  { shiftCode: "GEN", employees: 16 }, { shiftCode: "NIG", employees: 15 }] },
+      { hour: 18, shifts: [{ shiftCode: "MOR", employees: 4 },  { shiftCode: "GEN", employees: 13 }, { shiftCode: "NIG", employees: 17 }] },
+      { hour: 19, shifts: [{ shiftCode: "MOR", employees: 3 },  { shiftCode: "GEN", employees: 9 },  { shiftCode: "NIG", employees: 19 }] },
+      { hour: 20, shifts: [{ shiftCode: "MOR", employees: 2 },  { shiftCode: "GEN", employees: 6 },  { shiftCode: "NIG", employees: 21 }] },
+      { hour: 21, shifts: [{ shiftCode: "MOR", employees: 1 },  { shiftCode: "GEN", employees: 4 },  { shiftCode: "NIG", employees: 22 }] },
+      { hour: 22, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 23 }] },
+      { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 22 }] }
+    ] as HourlyShiftCoverage[],
+    devices: [
+      {serialNumber: "DEV-00124", name: "Main Gateway - Lobby",      connected: true,  ipAddress: "192.168.1.104", lastConnected: "Just now"},
+      {serialNumber: "DEV-00891", name: "Camera - Entrance",        connected: false, ipAddress: "192.168.1.45",  lastConnected: "3 hours ago"},
+      {serialNumber: "DEV-00337", name: "Sensor - Server Room",     connected: true,  ipAddress: "10.0.0.78",    lastConnected: "2 minutes ago"},
+      {serialNumber: "DEV-00912", name: "Access Point - Floor 2",   connected: true,  ipAddress: "192.168.2.15", lastConnected: "15 minutes ago"},
+      {serialNumber: "DEV-00456", name: "Thermostat - Conference",  connected: false, ipAddress: "192.168.1.89", lastConnected: "Yesterday 23:41"},
+      {serialNumber: "DEV-00723", name: "Doorbell - Back Gate",     connected: true,  ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"},
+      {serialNumber: "DEV-00773", name: "Access Point - Floor 4",   connected: true,  ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"}
+    ] as Device[],
+    attendanceCards: [
+      { title: "Total Requests", value: 51, color: "var(--color-active-members)" },
+      { title: "Pending",        value: 19, percentage: 37, color: "var(--color-late)" },
+      { title: "Approved",       value: 27, percentage: 53, color: "var(--color-present)" },
+      { title: "Rejected",       value: 5,  percentage: 10, color: "var(--color-absent)" },
+    ] as StatCardProps[],
+
+    attendanceCorrections: [
+      {
+        employeeName: "Neha Gupta",
+        employeeId: "EMP-3014",
+        attendanceDate: "2026-03-17",
+        punchTime: "09:21",
+        requestedPunchTime: "09:00",
+        punchType: "IN",
+        reason: "Public transport delay",
+        appliedOn: "2026-03-16",
+        status: "Pending",
+      },
+      {
+        employeeName: "Rohan Desai",
+        employeeId: "EMP-5721",
+        attendanceDate: "2026-03-17",
+        requestedPunchTime: "17:45",
+        punchType: "OUT",
+        reason: "Left early due to family emergency",
+        appliedOn: "2026-03-17",
+        status: "Approved",
+      },
+    ] as AttendanceCorrection[],
+  },
+  "2026-03-19": {
+    statCards: [
+      { title: "Active Members", value: 234, color: "var(--color-active-members)" },
+
+      { title: "Present",  value: 186, percentage: 79, color: "var(--color-present)" },  // 186 / 234 ≈ 79%
+      { title: "Absent",   value: 18,  percentage: 8,  color: "var(--color-absent)" },  // 18 / 234 ≈ 8%
+      { title: "Late",     value: 12,  percentage: 5,  color: "var(--color-late)" },  // 12 / 234 ≈ 5%
+      { title: "Leave",    value: 9,   percentage: 4,  color: "var(--color-leave)" },  // 9 / 234 ≈ 4%
+      { title: "Holiday",  value: 5,   percentage: 2,  color: "var(--color-holiday)" },  // 5 / 234 ≈ 2%
+      { title: "Week Off", value: 4,   percentage: 2,  color: "var(--color-weekoff)" },  // 4 / 234 ≈ 2%
+    ] as StatCardProps[],
+
+    deviceCards: [
+      { title: "Total Devices", value: 20, color: "var(--color-total-devices)" },
+
+      { title: "Online",  value: 16, percentage: 80, color: "var(--color-device-online)" }, // 16 / 20 = 80%
+      { title: "Offline", value: 4,  percentage: 20, color: "var(--color-device-offline)" }, // 4 / 20 = 20%
+      { title: "Logs", value: 7609, color: "var(--color-device-logs)" },
+    ] as StatCardProps[],
+
+    leaveCards : [
+      { title: "Leave Requests", value: 315, color: "var(--color-active-members)" },
+      { title: "Pending",             value: 142, percentage: 45, color: "var(--color-late)" },
+      { title: "Approved",            value: 138, percentage: 44, color: "var(--color-present)" },
+      { title: "Rejected",            value: 35,  percentage: 11, color: "var(--color-absent)" },
+    ] as StatCardProps[],
+
+    leaveInformation: [
+      { employeeName: "Neha Gupta",       employeeId: "EMP-3014", leaveCode: "EL", fromDate: "2025-04-05", toDate: "2025-04-08", appliedOn: "2025-03-20", status: "Approved"  },
+      { employeeName: "Rohan Desai",      employeeId: "EMP-5721", leaveCode: "SL", fromDate: "2025-04-12", toDate: "2025-04-12", appliedOn: "2025-04-08", status: "Pending"   },
+      { employeeName: "Ishita Banerjee",  employeeId: "EMP-6489", leaveCode: "CL", fromDate: "2025-03-28", toDate: "2025-03-30", appliedOn: "2025-03-15", status: "Approved"  },
+      { employeeName: "Arjun Malhotra",   employeeId: "EMP-9173", leaveCode: "PL", fromDate: "2025-05-01", toDate: "2025-05-10", appliedOn: "2025-04-10", status: "Pending"   },
+      { employeeName: "Simran Kaur",      employeeId: "EMP-2850", leaveCode: "ML", fromDate: "2025-04-15", toDate: "2025-05-14", appliedOn: "2025-03-25", status: "Approved"  },
+      { employeeName: "Yash Thakur",      employeeId: "EMP-7402", leaveCode: "CL", fromDate: "2025-04-20", toDate: "2025-04-21", appliedOn: "2025-04-18", status: "Rejected"  },
+      { employeeName: "Divya Iyer",       employeeId: "EMP-8635", leaveCode: "SL", fromDate: "2025-04-25", toDate: "2025-04-27", appliedOn: "2025-04-15", status: "Pending"   },
+    ]  as LeaveInfo[],
+
+    departmentData: [
+        { department: "Sales",     total: 35, present: 31, absent: 1, late: 1, leave: 1, holiday: 0, weekOff: 1 },
+        { department: "HR",        total: 10, present: 10, absent: 0, late: 0, leave: 0, holiday: 0, weekOff: 0 },
+        { department: "IT",        total: 25, present: 18, absent: 3, late: 1, leave: 2, holiday: 1, weekOff: 0 },
+        { department: "Marketing", total: 51, present: 45, absent: 1, late: 1, leave: 1, holiday: 1, weekOff: 2 },
+    ] as DepartmentAttendance[],
+
+    shiftCoverage: [
+      { hour: 0, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 20 }] },
+      { hour: 1, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 19 }] },
+      { hour: 2, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 1 },  { shiftCode: "NIG", employees: 18 }] },
+      { hour: 3, shifts: [{ shiftCode: "MOR", employees: 2 },  { shiftCode: "GEN", employees: 1 },  { shiftCode: "NIG", employees: 17 }] },
+      { hour: 4, shifts: [{ shiftCode: "MOR", employees: 4 },  { shiftCode: "GEN", employees: 0 },  { shiftCode: "NIG", employees: 16 }] },
+      { hour: 5, shifts: [{ shiftCode: "MOR", employees: 10 }, { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 14 }] },
+      { hour: 6, shifts: [{ shiftCode: "MOR", employees: 16 }, { shiftCode: "GEN", employees: 6 },  { shiftCode: "NIG", employees: 12 }] },
+      { hour: 7, shifts: [{ shiftCode: "MOR", employees: 22 }, { shiftCode: "GEN", employees: 12 }, { shiftCode: "NIG", employees: 9 }] },
+      { hour: 8, shifts: [{ shiftCode: "MOR", employees: 25 }, { shiftCode: "GEN", employees: 20 }, { shiftCode: "NIG", employees: 7 }] },
+      { hour: 9, shifts: [{ shiftCode: "MOR", employees: 27 }, { shiftCode: "GEN", employees: 30 }, { shiftCode: "NIG", employees: 5 }] },
+      { hour: 10, shifts: [{ shiftCode: "MOR", employees: 28 }, { shiftCode: "GEN", employees: 32 }, { shiftCode: "NIG", employees: 4 }] },
+      { hour: 11, shifts: [{ shiftCode: "MOR", employees: 26 }, { shiftCode: "GEN", employees: 34 }, { shiftCode: "NIG", employees: 4 }] },
+      { hour: 12, shifts: [{ shiftCode: "MOR", employees: 23 }, { shiftCode: "GEN", employees: 33 }, { shiftCode: "NIG", employees: 5 }] },
+      { hour: 13, shifts: [{ shiftCode: "MOR", employees: 19 }, { shiftCode: "GEN", employees: 29 }, { shiftCode: "NIG", employees: 7 }] },
+      { hour: 14, shifts: [{ shiftCode: "MOR", employees: 15 }, { shiftCode: "GEN", employees: 27 }, { shiftCode: "NIG", employees: 9 }] },
+      { hour: 15, shifts: [{ shiftCode: "MOR", employees: 11 }, { shiftCode: "GEN", employees: 23 }, { shiftCode: "NIG", employees: 11 }] },
+      { hour: 16, shifts: [{ shiftCode: "MOR", employees: 8 },  { shiftCode: "GEN", employees: 20 }, { shiftCode: "NIG", employees: 13 }] },
+      { hour: 17, shifts: [{ shiftCode: "MOR", employees: 6 },  { shiftCode: "GEN", employees: 16 }, { shiftCode: "NIG", employees: 15 }] },
+      { hour: 18, shifts: [{ shiftCode: "MOR", employees: 4 },  { shiftCode: "GEN", employees: 13 }, { shiftCode: "NIG", employees: 17 }] },
+      { hour: 19, shifts: [{ shiftCode: "MOR", employees: 3 },  { shiftCode: "GEN", employees: 9 },  { shiftCode: "NIG", employees: 19 }] },
+      { hour: 20, shifts: [{ shiftCode: "MOR", employees: 2 },  { shiftCode: "GEN", employees: 6 },  { shiftCode: "NIG", employees: 21 }] },
+      { hour: 21, shifts: [{ shiftCode: "MOR", employees: 1 },  { shiftCode: "GEN", employees: 4 },  { shiftCode: "NIG", employees: 22 }] },
+      { hour: 22, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 3 },  { shiftCode: "NIG", employees: 23 }] },
+      { hour: 23, shifts: [{ shiftCode: "MOR", employees: 0 },  { shiftCode: "GEN", employees: 2 },  { shiftCode: "NIG", employees: 22 }] }
+    ] as HourlyShiftCoverage[],
+    devices: [
+      {serialNumber: "DEV-00124", name: "Main Gateway - Lobby", connected: true, ipAddress: "192.168.1.104", lastConnected: "Just now"},
+      {serialNumber: "DEV-00891", name: "Camera - Entrance", connected: false, ipAddress: "192.168.1.45", lastConnected: "3 hours ago"},
+      {serialNumber: "DEV-00337", name: "Sensor - Server Room", connected: true, ipAddress: "10.0.0.78", lastConnected: "2 minutes ago"},
+      {serialNumber: "DEV-00912", name: "Access Point - Floor 2", connected: true, ipAddress: "192.168.2.15", lastConnected: "15 minutes ago"},
+      {serialNumber: "DEV-00456", name: "Thermostat - Conference", connected: false, ipAddress: "192.168.1.89", lastConnected: "Yesterday 23:41"},
+      {serialNumber: "DEV-00723", name: "Doorbell - Back Gate", connected: true, ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"},
+      {serialNumber: "DEV-00773", name: "Access Point - Floor 4", connected: true, ipAddress: "192.168.3.22", lastConnected: "4 minutes ago"}
+  ] as Device[],
+  attendanceCards: [
       { title: "Total Requests", value: 51, color: "var(--color-active-members)" },
       { title: "Pending",        value: 19, percentage: 37, color: "var(--color-late)" },
       { title: "Approved",       value: 27, percentage: 53, color: "var(--color-present)" },

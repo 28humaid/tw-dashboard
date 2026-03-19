@@ -4,10 +4,12 @@ import CompanyTable from './CompanyTable'
 import { useState } from 'react';
 import { Company } from '@/types/type';
 import CompanyFormModal from './CompanyForm';
+import { useTranslation } from 'react-i18next';
 
 const CompanyComponent = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingCompany, setEditingCompany] = useState<Company | null>(null);
+    const {t} = useTranslation()
 
     const handleAddClick = () => {
     setEditingCompany(null);
@@ -29,7 +31,7 @@ const CompanyComponent = () => {
     <div className='space-y-6'>
         <div className='flex items-center justify-end'>
             <Button onClick={handleAddClick} size='sm'>
-                Add Company
+                {t("masters.companyPage.Add Company")}
             </Button>
         </div>
         <div>

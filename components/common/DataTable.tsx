@@ -226,7 +226,7 @@ export default function DataTable<T>({
       {paginated && totalItems > pageSize && (
         <div className="flex items-center justify-between px-4 py-3 bg-gray-50 text-sm border-t border-gray-100">
           <div className="text-gray-600">
-            Showing {startIndex + 1}–{Math.min(startIndex + pageSize, totalItems)} of{" "}
+            {t("table.Showing")}{" "}<span dir="ltr">{startIndex + 1}–{Math.min(startIndex + pageSize, totalItems)}</span> {t("table.of")}{" "}
             {totalItems}
           </div>
 
@@ -237,7 +237,7 @@ export default function DataTable<T>({
               aria-label="Previous page"
               className="px-2.5 py-1.5 rounded border disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-100 flex items-center gap-0.5 text-xs font-medium"
             >
-              <ChevronLeft size={14} />
+              <ChevronLeft size={14} className="flip-in-rtl"/>
               {t("pagination.Previous")}
             </button>
 
@@ -270,7 +270,7 @@ export default function DataTable<T>({
               className="px-2.5 py-1.5 rounded border disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-100 flex items-center gap-0.5 text-xs font-medium"
             >
               {t("pagination.Next")}
-              <ChevronRight size={14} />
+              <ChevronRight size={14} className="flip-in-rtl"/>
             </button>
           </div>
         </div>

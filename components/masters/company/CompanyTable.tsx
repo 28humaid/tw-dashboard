@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Company } from "@/types/type";
 import DataTable from "@/components/common/DataTable"; 
 import { companies } from "@/data/CompanyData"; 
+import { useTranslation } from "react-i18next";
 interface CompanyTableProps {
   handleEdit: (row: Company, index: number) => void;
 }
@@ -11,10 +12,11 @@ interface CompanyTableProps {
 const CompanyTable = ({handleEdit}: CompanyTableProps) => {
   // Local state so delete actually works (industry standard for demo tables)
   const [data, setData] = useState<Company[]>(companies);
+  const {t} = useTranslation()
 
   // ─── Delete Handler (with confirmation) ───────────────────────────────
   const handleDelete = (row: Company, index: number) => {
-    if (window.confirm(`🗑️ Delete "${row.name}"?\n\nThis action cannot be undone.`)) {
+    if (window.confirm(`Delete "${row.name}"?\n\nThis action cannot be undone.`)) {
       setData((prev) => prev.filter((_, i) => i !== index));
       alert(`✅ "${row.name}" has been deleted (demo).`);
       // Real implementation: call API + refetch or optimistic update
@@ -25,7 +27,7 @@ const CompanyTable = ({handleEdit}: CompanyTableProps) => {
   const columns = [
     {
       id: "status",
-      header: "Status",
+      header: t("masters.companyTable.Status"),
       cell: (row:Company) => (
         <span
             className={`text-xs ${
@@ -41,37 +43,37 @@ const CompanyTable = ({handleEdit}: CompanyTableProps) => {
     },
     {
       id: "code",
-      header: "Code",
+      header: t("masters.companyTable.Code"),
       cell: (row:Company) => <span className="font-mono">{row.code}</span>,
     },
     {
       id: "name",
-      header: "Company Name",
+      header: t("masters.companyTable.Company Name"),
       cell: (row:Company) => <span>{row.name}</span>,
     },
     {
       id: "shortName",
-      header: "Short Name",
+      header: t("masters.companyTable.Short Name"),
       cell: (row:Company) => row.shortName,
     },
     {
       id: "industryNature",
-      header: "Industry",
+      header: t("masters.companyTable.Industry"),
       cell: (row:Company) => row.industryNature,
     },
     {
       id: "address",
-      header: "Address",
+      header: t("masters.companyTable.Address"),
       cell: (row:Company) => row.address,
     },
     {
       id: "phoneNumber",
-      header: "Phone Number",
+      header: t("masters.companyTable.Phone Number"),
       cell: (row:Company) => row.phoneNumber,
     },
     {
       id: "email",
-      header: "Email",
+      header: t("masters.companyTable.Email"),
       cell: (row:Company) => (
         <a
           href={`mailto:${row.email}`}
@@ -83,7 +85,7 @@ const CompanyTable = ({handleEdit}: CompanyTableProps) => {
     },
     {
       id: "validUpto",
-      header: "Valid Upto",
+      header: t("masters.companyTable.Valid Upto"),
       cell: (row:Company) =>
         new Date(row.validUpto).toLocaleDateString("en-IN", {
           day: "numeric",
@@ -101,7 +103,7 @@ const CompanyTable = ({handleEdit}: CompanyTableProps) => {
       searchable
       paginated
       pageSize={4}
-      searchPlaceholder="Search companies..."
+      searchPlaceholder={t("masters.companyTable.Search Placeholder")}
       onEdit={handleEdit}
       onDelete={handleDelete}
       minWidth="min-w-[2000px]"

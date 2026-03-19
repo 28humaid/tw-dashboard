@@ -201,6 +201,25 @@
     "Please select another date": "Please select another date"
   },
   "table": { 
-    "actions": "Actions" 
+    "actions": "Actions",
+    "Showing":"Showing",
+    "of":"of"
+  },
+  "masters":{
+    "companyPage":{
+      "Add Company":"Add Company"
+    },
+    "companyTable":{
+      "Status":"Status",
+      "Code":"Code",
+      "Company Name":"Company Name",
+      "Short Name":"Short Name",
+      "Industry":"Industry",
+      "Address":"Address",
+      "Phone Number":"Phone Number",
+      "Email":"Email",
+      "Valid Upto":"Valid Upto",
+      "Search Placeholder":"Search companies..."
+    }
   } 
 }

@@ -194,6 +194,25 @@
     "Please select another date": "يرجى اختيار تاريخ آخر"
   },
   "table": { 
-    "actions": "إجراءات" 
+    "actions": "إجراءات",
+    "Showing":"عرض",
+    "of":"من" 
+  },
+  "masters": {
+  "companyPage": {
+    "Add Company": "إضافة شركة"
+  },
+  "companyTable": {
+    "Status": "الحالة",
+    "Code": "الرمز",
+    "Company Name": "اسم الشركة",
+    "Short Name": "الاسم المختصر",
+    "Industry": "الصناعة",
+    "Address": "العنوان",
+    "Phone Number": "رقم الهاتف",
+    "Email": "البريد الإلكتروني",
+    "Valid Upto": "صالح حتى",
+    "Search Placeholder":"...ابحث عن الشركات"
   }
+}
 }
