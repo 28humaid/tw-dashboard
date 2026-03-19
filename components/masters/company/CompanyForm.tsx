@@ -8,15 +8,16 @@ import { z } from "zod";
 import BottomSheetModal from "@/components/common/BottomSheetModal";
 
 import Button from "@/components/common/Button";
-import Toast from "@/components/common/Toast"; // your Toast component
+import { useToast } from "@/components/common/ToastProvider";
 
 import { Company } from "@/types/type";
 import { Input } from "@/components/common/InputField";
 import FormSelect from "@/components/common/FormSelect";
 import {useStatusOptions} from "@/hooks/useStatusOptions";
-import { companySchema } from "@/lib/companySchema";
+import { useTranslation } from "react-i18next";
+import { createCompanySchema } from "@/lib/companySchema";
 
-type CompanyFormData = z.infer<typeof companySchema>;
+type CompanyFormData = z.infer<ReturnType<typeof createCompanySchema>>;
 
 interface CompanyFormModalProps {
   isOpen: boolean;
@@ -32,7 +33,7 @@ export default function CompanyFormModal({
   onSuccess,
 }: CompanyFormModalProps) {
   const isEditMode = !!initialData;
-
+  const {t} = useTranslation()
   const {
     register,
     handleSubmit,
@@ -40,7 +41,7 @@ export default function CompanyFormModal({
     reset,
     setValue,
   } = useForm<CompanyFormData>({
-    resolver: zodResolver(companySchema),
+    resolver: zodResolver(createCompanySchema(t)),
     defaultValues: {
       status: "ACTIVE",
       maxUser: 50,
@@ -48,6 +49,7 @@ export default function CompanyFormModal({
     },
   });
   const { options, loading } = useStatusOptions();
+  const { success } = useToast();
 
   // Reset / populate form when modal opens or initialData changes
   useEffect(() => {
@@ -73,13 +75,15 @@ export default function CompanyFormModal({
       isEditMode ? "=== COMPANY UPDATED ===" : "=== NEW COMPANY ADDED ===",
       data
     );
-
-    // Show success toast (you can manage toast state globally or pass callback)
-    // For simplicity, we'll alert here. In production, use a global toast store.
-    alert(
+    // alert(
+    //   isEditMode
+    //     ? `✅ Company "${data.name}" updated successfully!`
+    //     : `✅ Company "${data.name}" added successfully!`
+    // );
+    success(
       isEditMode
-        ? `✅ Company "${data.name}" updated successfully!`
-        : `✅ Company "${data.name}" added successfully!`
+        ? t("masters.companyForm.companyUpdatedSuccess", { name: data.name })
+        : t("masters.companyForm.companyAddedSuccess", { name: data.name })
     );
 
     onSuccess?.(data, isEditMode);
@@ -92,21 +96,15 @@ export default function CompanyFormModal({
         <div className="mx-auto">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-semibold">
-              {isEditMode ? "Edit Company" : "Add New Company"}
+              {isEditMode ? t("masters.companyForm.Edit Company") : t("masters.companyForm.Add New Company")}
             </h2>
-            {/* <button
-              onClick={onClose}
-              className="text-gray-500 hover:text-gray-700"
-            >
-              <X size={24} />
-            </button> */}
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Code */}
               <Input
-                label="Company Code *"
+                label={`${t("masters.companyForm.Company Code")} *`}
                 {...register("code")}
                 error={errors.code?.message}
                 placeholder="ORG001"
@@ -114,31 +112,31 @@ export default function CompanyFormModal({
 
               {/* Name */}
               <Input
-                label="Company Name *"
+                label={`${t("masters.companyForm.Company Name")}*`}
                 {...register("name")}
                 error={errors.name?.message}
-                placeholder="TechNova Solutions Pvt Ltd"
+                placeholder={t("masters.companyForm.placeholder.companyName")}
               />
 
               {/* Short Name */}
               <Input
-                label="Short Name *"
+                label={`${t("masters.companyForm.Short Name")}*`}
                 {...register("shortName")}
                 error={errors.shortName?.message}
-                placeholder="TechNova"
+                placeholder={t("masters.companyForm.placeholder.shortName")}
               />
 
               {/* Industry */}
               <Input
-                label="Industry Nature *"
+                label={`${t("masters.companyForm.Industry Nature")}*`}
                 {...register("industryNature")}
                 error={errors.industryNature?.message}
-                placeholder="Information Technology"
+                placeholder={t("masters.companyForm.placeholder.Industry")}
               />
 
               {/* Email */}
               <Input
-                label="Email *"
+                label={`${t("masters.companyForm.Email")}*`}
                 type="email"
                 {...register("email")}
                 error={errors.email?.message}
@@ -147,25 +145,25 @@ export default function CompanyFormModal({
 
               {/* Phone */}
               <Input
-                label="Phone Number *"
+                label={`${t("masters.companyForm.Phone Number")}*`}
                 {...register("phoneNumber")}
                 error={errors.phoneNumber?.message}
-                placeholder="+91-9876543210"
+                placeholder="91-9876543210"
               />
 
               {/* Address */}
               <div className="md:col-span-2">
                 <Input
-                  label="Address *"
+                  label={`${t("masters.companyForm.Address")}*`}
                   {...register("address")}
                   error={errors.address?.message}
-                  placeholder="Sector 62, Noida, Uttar Pradesh, India"
+                  placeholder={t("masters.companyForm.placeholder.companyName")}
                 />
               </div>
 
               {/* PAN */}
               <Input
-                label="PAN *"
+                label={`${t("masters.companyForm.PAN")}*`}
                 {...register("pan")}
                 error={errors.pan?.message}
                 placeholder="AAACT1234F"
@@ -173,7 +171,7 @@ export default function CompanyFormModal({
 
               {/* Registration Number */}
               <Input
-                label="Registration Number *"
+                label={`${t("masters.companyForm.Registration Number")}*`}
                 {...register("registrationNumber")}
                 error={errors.registrationNumber?.message}
                 placeholder="U72900UP2018PTC102345"
@@ -181,14 +179,14 @@ export default function CompanyFormModal({
 
               {/* Max Users & Devices */}
               <Input
-                label="Max Users *"
+                label={`${t("masters.companyForm.Max Users")}*`}
                 type="number"
                 {...register("maxUser", { valueAsNumber: true })}
                 error={errors.maxUser?.message}
               />
 
               <Input
-                label="Max Devices *"
+                label={`${t("masters.companyForm.Max Devices")}*`}
                 type="number"
                 {...register("maxDevice", { valueAsNumber: true })}
                 error={errors.maxDevice?.message}
@@ -196,7 +194,7 @@ export default function CompanyFormModal({
 
               {/* Valid Upto */}
               <Input
-                label="Valid Upto *"
+                label={`${t("masters.companyForm.Valid Upto")}*`}
                 type="date"
                 {...register("validUpto")}
                 error={errors.validUpto?.message}
@@ -204,36 +202,36 @@ export default function CompanyFormModal({
 
               {/* Registration Date */}
               <Input
-                label="Registration Date *"
+                label={`${t("masters.companyForm.Registration Number")}*`}
                 type="date"
                 {...register("registrationDate")}
                 error={errors.registrationDate?.message}
               />
               <FormSelect
-                label="Status"
+                label={`${t("masters.companyForm.Status")}*`}
                 required
                 options={options}
                 register={register("status")}
                 error={errors.status}
                 loading={loading}
-                placeholder="Select status"
+                placeholder={t("masters.companyForm.placeholder.Select status")}
                 />
             </div>
 
             {/* Optional Fields */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Input
-                label="TAN"
+                label={t("masters.companyForm.TAN")}
                 {...register("tan")}
                 error={errors.tan?.message}
               />
               <Input
-                label="PF Number"
+                label={t("masters.companyForm.PF Number")}
                 {...register("pfNumber")}
                 error={errors.pfNumber?.message}
               />
               <Input
-                label="LC Number"
+                label={t("masters.companyForm.LC Number")}
                 {...register("lcNumber")}
                 error={errors.lcNumber?.message}
               />
@@ -241,21 +239,19 @@ export default function CompanyFormModal({
 
             <div className="flex justify-end gap-4 pt-6 border-t border-gray-300">
               <Button type="button" variant="outline" onClick={onClose}>
-                Cancel
+                {t("masters.companyForm.Cancel")}
               </Button>
               <Button type="submit" disabled={isSubmitting}>
                 {isSubmitting
-                  ? "Saving..."
+                  ? t("masters.companyForm.Saving")
                   : isEditMode
-                  ? "Update Company"
-                  : "Add Company"}
+                  ? t("masters.companyForm.Update Company")
+                  : t("masters.companyForm.Add Company")}
               </Button>
             </div>
           </form>
         </div>
       </BottomSheetModal>
-
-      {/* Optional: Global Toast can be placed here or in a provider */}
     </>
   );
 }

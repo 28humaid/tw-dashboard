@@ -199,20 +199,131 @@
     "of":"من" 
   },
   "masters": {
-  "companyPage": {
-    "Add Company": "إضافة شركة"
-  },
-  "companyTable": {
-    "Status": "الحالة",
-    "Code": "الرمز",
-    "Company Name": "اسم الشركة",
-    "Short Name": "الاسم المختصر",
-    "Industry": "الصناعة",
-    "Address": "العنوان",
-    "Phone Number": "رقم الهاتف",
-    "Email": "البريد الإلكتروني",
-    "Valid Upto": "صالح حتى",
-    "Search Placeholder":"...ابحث عن الشركات"
+    "companyPage": {
+      "Add Company": "إضافة شركة"
+    },
+    "companyTable": {
+      "Status": "الحالة",
+      "Code": "الرمز",
+      "Company Name": "اسم الشركة",
+      "Short Name": "الاسم المختصر",
+      "Industry": "الصناعة",
+      "Address": "العنوان",
+      "Phone Number": "رقم الهاتف",
+      "Email": "البريد الإلكتروني",
+      "Valid Upto": "صالح حتى",
+      "Search Placeholder":"...ابحث عن الشركات"
+    },
+    "companyForm":{
+      "Edit Company": "تعديل الشركة",
+      "Add New Company": "إضافة شركة جديدة",
+      "companyUpdatedSuccess": "تم تحديث الشركة \"{{name}}\" بنجاح!",
+      "companyAddedSuccess": "تمت إضافة الشركة \"{{name}}\" بنجاح!",
+      "Company Code": "رمز الشركة",
+      "Company Name": "اسم الشركة",
+      "Short Name": "الاسم المختصر",
+      "Industry Nature": "طبيعة الصناعة",
+      "Email": "البريد الإلكتروني",
+      "Phone Number": "رقم الهاتف",
+      "Address": "العنوان",
+      "PAN": "رقم PAN",
+      "Registration Number": "رقم التسجيل",
+      "Max Users": "الحد الأقصى للمستخدمين",
+      "Max Devices": "الحد الأقصى للأجهزة",
+      "Valid Upto": "صالح حتى",
+      "Registration Date": "تاريخ التسجيل",
+      "Status": "الحالة",
+      "TAN": "رقم TAN",
+      "PF Number": "رقم PF",
+      "LC Number": "رقم LC",
+      "Cancel": "إلغاء",
+      "Saving": "جارٍ الحفظ",
+      "Update Company": "تحديث الشركة",
+      "Add Company": "إضافة شركة",
+      "placeholder": {
+        "companyName": "شركة تك نوفا للحلول الخاصة المحدودة",
+        "shortName": "تك نوفا",
+        "industry": "تكنولوجيا المعلومات",
+        "address": "القطاع 62، نويدا، أوتار براديش، الهند",
+        "Select status": "اختر الحالة"
+      },
+      "companySchema": {
+        "Code must be at least 3 characters": "يجب أن يكون الرمز 3 أحرف على الأقل",
+        "Company name is required": "اسم الشركة مطلوب",
+        "Short name is required": "الاسم المختصر مطلوب",
+        "Industry nature is required": "طبيعة الصناعة مطلوبة",
+        "Address must be at least 10 characters": "يجب أن يتكون العنوان من 10 أحرف على الأقل",
+        "Invalid phone number": "رقم الهاتف غير صالح",
+        "Invalid email address": "عنوان البريد الإلكتروني غير صالح",
+        "Registration number is required": "رقم التسجيل مطلوب",
+        "Invalid PAN format (e.g. ABCDE1234F)": "تنسيق PAN غير صالح (مثال: ABCDE1234F)",
+        "Max users must be at least 1": "يجب أن يكون الحد الأدنى للمستخدمين 1",
+        "Max devices must be at least 1": "يجب أن يكون الحد الأدنى للأجهزة 1",
+        "Invalid date": "تاريخ غير صالح"
+      }
+    },
+    "locationPage": {
+      "Add Location": "إضافة موقع"
+    },
+    "locationTable": {
+      "Code": "الرمز",
+      "Location Name": "اسم الموقع",
+      "Address": "العنوان",
+      "City": "المدينة",
+      "State": "الولاية",
+      "Postal Code": "الرمز البريدي",
+      "Country": "الدولة",
+      "Contact": "جهة الاتصال",
+      "Email": "البريد الإلكتروني",
+      "Search Placeholder": "ابحث بالاسم أو الرمز أو المدينة..."
+    },
+    "locationForm": {
+      "Add New Location": "إضافة موقع جديد",
+      "Edit Location": "تعديل الموقع",
+      "Location Code": "رمز الموقع",
+      "Location Name": "اسم الموقع",
+      "Address Line 1": "سطر العنوان 1",
+      "Address Line 2": "سطر العنوان 2 (اختياري)",
+      "City": "المدينة",
+      "State": "الولاية",
+      "Postal Code": "الرمز البريدي",
+      "Country": "الدولة",
+      "Contact": "رقم الاتصال",
+      "Email ID": "البريد الإلكتروني",
+      "Cancel": "إلغاء",
+      "Saving": "جارٍ الحفظ...",
+      "Update Location": "تحديث الموقع",
+      "Add Location": "إضافة موقع",
+      "locationAddedSuccess": "تمت إضافة الموقع \"{{name}}\" بنجاح!",
+      "locationUpdatedSuccess": "تم تحديث الموقع \"{{name}}\" بنجاح!",
+      "placeholder": {
+        "locationName": "مثال: المقر الرئيسي في مومباي",
+        "address1": "الشارع، المبنى، الطابق",
+        "address2": "معلم بارز، المنطقة (اختياري)",
+        "city": "مثال: مومباي",
+        "state": "مثال: ماهاراشترا",
+        "country": "مثال: الهند"
+      },
+      "locationSchema": {
+        "Location code is required": "رمز الموقع مطلوب",
+        "Code must be 20 characters or less": "يجب ألا يزيد الرمز عن 20 حرفًا",
+        "Location name is required": "اسم الموقع مطلوب",
+        "Name must be 100 characters or less": "يجب ألا يزيد الاسم عن 100 حرف",
+        "City is required": "المدينة مطلوبة",
+        "City must be 50 characters or less": "يجب ألا يزيد اسم المدينة عن 50 حرفًا",
+        "State is required": "الولاية مطلوبة",
+        "State must be 50 characters or less": "يجب ألا يزيد اسم الولاية عن 50 حرفًا",
+        "Postal code is required": "الرمز البريدي مطلوب",
+        "Postal code must be 10 characters or less": "يجب ألا يزيد الرمز البريدي عن 10 أحرف",
+        "Country is required": "الدولة مطلوبة",
+        "Country must be 50 characters or less": "يجب ألا يزيد اسم الدولة عن 50 حرفًا",
+        "Address line 1 is required": "سطر العنوان الأول مطلوب",
+        "Address must be 200 characters or less": "يجب ألا يزيد العنوان عن 200 حرف",
+        "Contact number is required": "رقم الاتصال مطلوب",
+        "Contact must be 10 characters": "يجب أن يتكون رقم الاتصال من 10 أرقام",
+        "Email is required": "البريد الإلكتروني مطلوب",
+        "Invalid email address": "عنوان البريد الإلكتروني غير صالح"
+      }
+    }
   }
-}
 }

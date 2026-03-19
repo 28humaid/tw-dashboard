@@ -200,3 +200,16 @@ export interface Company {
   createdAt?: string;                          // optional metadata
   updatedAt?: string;
 }
+
+export interface Location {
+  code: string;
+  name: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  country: string;
+  address1: string;
+  address2?: string; // optional
+  contact: string;
+  emailId: string;
+}
